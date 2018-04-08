@@ -13,11 +13,49 @@ A library of preset styles and mixins to help with faster CSS development.
 I set up LESS so it's namespaced with groups of re-usable mixins.
 I am essentially replacing common groups of styles with 1 line of code, in English readable format (Declarative).
 
-CSS Grid Style
+Color Variables:
 
-```CSS
-#display.grid();
+@black
+@white
+
+Screen Size Variables for media queries:
+
+Target below 320px:
 ```
+@media @tiny-screen-max {} 
+```
+
+Target above 320px:
+```
+@tiny-screen-min
+```
+
+Target below 479px
+```
+@media @small-screen-max {}
+```
+
+Target above 420px
+```
+@media @small-screen-min {}
+```
+
+More Target Screen Sizes:
+
+```
+@media @medium-screen-max {};
+@media @medium-screen-min {};
+@media @medium-plus-screen-max {};
+@media @medium-plus-screen-min {};
+@media @large-screen-screen-max {};
+@media @large-screen-screen-min {};
+@media @x-large-screen-screen-max {};
+@media @x-large-screen-screen-min {};
+@media @hd-screen-screen-max {};
+@media  @hd-screen-screen-min {};
+```
+
+CSS Grid Style
 
 ## Borders
 
