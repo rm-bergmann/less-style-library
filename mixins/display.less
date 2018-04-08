@@ -1,0 +1,163 @@
+/*
+ * This file contains mixins / functions to which include very common style sets used for display.
+ * Usually benefecial if there are 2 or more rules declared.
+ */
+
+#display {
+
+ /*
+  * Use this for Gridwork:
+  * Default: mobile. This will center the element with margin on each side
+  * @params: width, margin-left. Use percent [%] values
+  */
+
+  .grid(@w: 90%, @ml: 5%) when (default()) {
+    width: @w;
+    margin-left: @ml;
+  }
+  
+  .grid(@type) when (@type = full) {
+    width: 100%;
+    margin-left: 0;
+  }
+   
+  /*
+   * Display vertical padding on elements
+   * Less on mobile more on desktop
+   */
+
+  .vertical-padding(@val: .5rem) {
+    padding: @val 0;
+
+    @media @tablet {
+      padding: (@val * 2) 0;
+    }
+  }
+  
+  /*
+   * Set color and background color
+   */
+
+  .colors(@col: @black, @bg: @white) {
+    color: @col;
+    background-color: @bg;
+  }
+  
+  /*
+   * Set Width & Height
+   */
+
+  .dimensions(@w: 100px, @h: 100px) when (default()) {
+    width: @w;
+    height: @h;
+  }
+  
+  /*
+   * Width & Height always equal
+   */
+  
+  .dimensions(@type, @val: 100px) when (@type = equal) {
+    width: @val;
+    height: @val;
+  }
+  
+  /*
+   * Display a block. Width & Height always equal.
+   * Background-color, Padding and Border-radius can be changed.
+   * @paramas: @size = {width & height}, background-color, border-raduis & padding
+   */
+
+  .block(@size: 100px, @bg: @black, @br: 0, @pad: 1em) {
+    display: block;
+    width: @size;
+    height: @size;
+    background: @bg;
+    border-radius: @br;
+    padding: @pad;
+  }
+  
+  /*
+   * I don't really use visibility hidden but could be useful
+   */
+  
+  .hidden() {
+    display: none;
+    visibility: hidden;
+  }
+
+  /*
+   * Zero spacing inside and outside element
+   */
+
+  .no-space() {
+    margin: 0;
+    padding: 0;
+  }
+
+  /*
+   * Clearfix. Use this when elements are floated to fix the height of the parent element
+   * Also good for mis-aligned elements caused by floats.
+   */
+
+  .clearfix() {
+    &:before,
+    &:after {
+      content: '';
+      display: table;
+    }
+    
+    &:after {
+      clear: both;
+    }
+  }
+
+  /*
+   * For quick display on :before & :after Pseudo elements.
+   */
+
+  .pseudo(@val: '') {
+    content: @val;
+    display: block;
+  }
+
+  /*
+   * Hide on mobile, Display on Desktop
+   * @max-mobile needs to be defined in the theme that uses this style
+   * @todo: Import media query variables (only after they are standardised and made global)
+   */
+
+  .desktop() {
+    display: none;
+
+    @media @desktop-narrow {
+      display: block;
+    }
+  }
+  
+  /*
+   * Hide by default and display on tablet and desktop
+   */
+  
+  .tablet() {
+    display: none;
+
+    @media @tablet {
+      display: block;
+    }
+  }
+
+  /*
+   * Hide on desktop, Display on Mobile
+   * @max-mobile needs to be defined in the theme that uses this style
+   * @todo: Import media query variables (only after they are standardised and made global)
+   */
+
+  .mobile() {
+    display: block;
+
+    @media @tablet-narrow {
+      display: none;
+    }
+  }
+  
+}

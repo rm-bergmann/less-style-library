@@ -1,0 +1,11 @@
+{
+  "name": "less-style-library",
+  "version": "1.0.0",
+  "description": "Styles and mixins library to for faster CSS development.",
+  "author": "Rick Bergmann",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rm-bergmann/less-style-library"
+  },
+}

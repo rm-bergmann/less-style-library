@@ -1,0 +1,42 @@
+// This file will define the form components namespace:
+// Declare sets of re-usable styles to be used on form components
+
+// Currently this is a test on 2 nodes. After the test the body class should be removed and the styles should become default.
+// If you see this message please chase it up (ticket no: FE-1430)
+
+#form {
+
+  .text-input() {
+    width: 100%;
+    border-radius: 6px;
+    height: 38px;
+    padding: 4px;
+    color: #000;
+    font-size: 1.4em;
+    background-color: #fafafa;
+    #display.border(2px, #ddd);
+  }
+
+  .button() {
+    font-size: 1.4em;
+    width: 100%;
+    padding: .5em .8em .7em .8em;
+    white-space: normal;
+    color: #fff;
+    border: 2px solid hsl(0, 84%, 40%);
+    border-radius: .2em;
+    background: @col-2;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: #f03232;
+    }
+
+    @media @min-tablet {
+      padding: .5em .8em;
+    }
+  }
+}

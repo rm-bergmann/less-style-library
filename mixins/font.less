@@ -1,0 +1,40 @@
+#font {
+
+  .type(@size: 1em, @style: normal) when (default()) {
+    font-family: @font-sans, sans-serif;
+    font-size: @size;
+    font-style: @style;
+  }
+  
+  .type(@type, @size: 1em, @style: normal) when (@type = serif) {
+    font-family: @font-serif, serif;
+    font-size: @size;
+    font-style: @style;
+    letter-spacing: 2px;
+  }
+  
+  .settings(@size: 11px, @lh: 15px, @fw: normal, @align: center) {
+    font-size: @size;
+    line-height: @lh;
+    font-weight: @fw;
+    text-align: @align;
+  }
+
+  .size(@size: 1em, @lh: normal) {
+    font-size: @size;
+    line-height: @lh;
+  }
+
+  .style(@size: 1em, @weight: 400, @align: center) {
+    font-size: @size;
+    font-weight: @weight;
+    text-align: @align;
+  }
+  
+}
+
+@font-sans:  'Volkhov';
+@font-serif: 'Suez One';
+
+@import url('https://fonts.googleapis.com/css?family=Volkhov');
+@import url('https://fonts.googleapis.com/css?family=Suez+One');
