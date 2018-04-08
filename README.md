@@ -4,17 +4,26 @@ A library of preset styles and mixins to help with faster CSS development.
 This LESS architecture is set up so it's namespaced with groups of re-usable mixins in Declarative format.
 
 # Install With NPM:
-* $ NPM Install less-style-library
+* $ npm i --save-dev less-style-library
 * import the library in your application LESS file
 
 ```CSS
-@import '/path-to/node_modules/less-style-library/imports;'
+@import '/path-to/node_modules/less-style-library/imports';
 ```
 
-Available Color Variables:
+LESS is declarative and evaluates stylesheets (it does not run like a script from top to bottom),
+therefore keep in mind that this library should be imported after all your application custom styles.
+
+## Tip
+Create an imports.less file to import all your less files and import this library last - after all other LESS files.
+
+Mixins are only compiled into a stylesheet when they are used, so bear in mind this library does not add
+filesize to your compilied CSS file.
+
+## Available Color Variables:
 These are different shades to CSS default color variables (Except for black & white).
 You can override them in your app LESS file as long as the new
-LESS variable is declared after the mixin imports (Needs more testing)
+LESS variables are declared before the mixin imports (Needs more testing)
 
 ```CSS
 @black
@@ -26,9 +35,25 @@ LESS variable is declared after the mixin imports (Needs more testing)
 @orange
 @yellow
 @pink 
-@grey
+@gray
+```
+
+## More shades:
+You can suffix the above variables (except for black and white) with '-light' and '-dark'
+
+```CSS
+@blue-light 
+@green-light
+@red-dark
+@purple-dark
+```
+
+## Primary and Secondary Color Variables
+You can override these variables with your choice of colours
+
+```CSS
 @col-primary    /* @blue */
-@col-secondary /* @orange */
+@col-secondary  /* @gray-light */
 ```
 
 ## Screen Size Variables for media queries:
@@ -42,7 +67,7 @@ Target below 320px:
 Target above 320px:
 
 ```CSS
-@tiny-screen-min
+@media @tiny-screen-min {}
 ```
 
 Target below 479px
