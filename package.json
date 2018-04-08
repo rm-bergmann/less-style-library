@@ -1,6 +1,6 @@
 {
   "name": "less-style-library",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Styles and mixins library to for faster CSS development.",
   "author": "Rick Bergmann",
   "license": "ISC",

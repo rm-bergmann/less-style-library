@@ -1,6 +1,30 @@
 #button {
   
-  .nav-link() {
+  .defaults() {
+    border: none;
+    outline: none;
+    padding: .8em;
+    font-size: .8em
+  }
+  
+  .flat(@col: @col-primary) when (default()) {
+    #button.defauts();
+    background: @col;
+  }
+  
+  .flat(@type, @col: @col-primary) when (@type = round-edge) {
+    #button.defauts();
+    background: @col;
+    border-radius: 4px;
+  }
+  
+  .flat(@type, @col: @col-primary) when (@type = round) {
+    #button.defauts();
+    background: @col;
+    border-radius: 20px;
+  }
+  
+  .link(@col-primary) {
     text-decoration: none;
     font-size: 1.2em;
     width: 120px;
@@ -10,7 +34,7 @@
     padding: .6em;
     text-align: center;
     border-radius: .2em;
-    color: @col-primary;
+    color: @col;
     #border.solid(1px, @col-primary);
     
     &:hover,

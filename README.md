@@ -191,9 +191,25 @@ If you want to show / hide on specific devices you can use these mixins, as they
 
 ## Button Mixins
 
-Style a link as buttons.
+Plain Flat Button Style, you can pass in your color of choice (defaults to @col-primary)
+
 ```CSS
-#button.link();
+#button.flat(green)
+```
+
+Plain Flat Button Style slight round edges
+```CSS
+#button.flat(round-edge, red)
+```
+
+Plain Flat, Round Button Style
+```CSS
+#button.flat(round, blue)
+```
+
+Style a link anchor tage as a button, pass in your colour of choice
+```CSS
+#button.link(green);
 ```
 
 ## More Coming Soon. Stay tuned!
