@@ -1,48 +1,65 @@
 # LESS Style Library
 
 A library of preset styles and mixins to help with faster CSS development.
+This LESS architecture is set up so it's namespaced with groups of re-usable mixins in Declarative format.
 
-# Installation:
+# Install With NPM:
 * $ NPM Install less-style-library
 * import the library in your application LESS file
 
+```CSS
+@import '/path-to/node_modules/less-style-library/imports;'
 ```
-@import 'node_modules/less-mixin-library/mixin-imports;'
-```
 
-I set up LESS so it's namespaced with groups of re-usable mixins.
-I am essentially replacing common groups of styles with 1 line of code, in English readable format (Declarative).
+Available Color Variables:
+These are different shades to CSS default color variables (Except for black & white).
+You can override them in your app LESS file as long as the new
+LESS variable is declared after the mixin imports (Needs more testing)
 
-Color Variables:
-
+```CSS
 @black
 @white
+@blue 
+@green
+@red   
+@purple
+@orange
+@yellow
+@pink 
+@grey
+@col-primary    /* @blue */
+@col-secondary /* @orange */
+```
 
-Screen Size Variables for media queries:
+## Screen Size Variables for media queries:
 
 Target below 320px:
-```
+
+```CSS
 @media @tiny-screen-max {} 
 ```
 
 Target above 320px:
-```
+
+```CSS
 @tiny-screen-min
 ```
 
 Target below 479px
-```
+
+```CSS
 @media @small-screen-max {}
 ```
 
 Target above 420px
-```
+
+```CSS
 @media @small-screen-min {}
 ```
 
 More Target Screen Sizes:
 
-```
+```CSS
 @media @medium-screen-max {};
 @media @medium-screen-min {};
 @media @medium-plus-screen-max {};
@@ -52,7 +69,7 @@ More Target Screen Sizes:
 @media @x-large-screen-screen-max {};
 @media @x-large-screen-screen-min {};
 @media @hd-screen-screen-max {};
-@media  @hd-screen-screen-min {};
+@media @hd-screen-screen-min {};
 ```
 
 CSS Grid Style
@@ -103,6 +120,7 @@ You can also position fixed or relative with the same params:
 ## Display Mixins
 
 Apply this mixin to the parent element which will align children from left to right with equal spacing.
+
 ```CSS
 #display.flex(space);
 ```
