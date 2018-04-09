@@ -3,27 +3,27 @@
 A library of preset styles and mixins to help with faster CSS development.
 This LESS architecture is set up so it's namespaced with groups of re-usable mixins in Declarative format.
 
+LESS is declarative and evaluates stylesheets (it does not run like a script from top to bottom),
+therefore keep in mind that this library should be imported before all your application custom styles.
+LESS lazy loads variables so it will use the last variable definition in scope.
+
 # Install With NPM:
 * $ npm i --save-dev less-style-library
 * import the library in your application LESS file
+
+## Tip
+Create an imports.less file to import all your less files and import this library last - before all other LESS files.
 
 ```CSS
 @import '/path-to/node_modules/less-style-library/imports';
 ```
 
-LESS is declarative and evaluates stylesheets (it does not run like a script from top to bottom),
-therefore keep in mind that this library should be imported after all your application custom styles.
-
-## Tip
-Create an imports.less file to import all your less files and import this library last - after all other LESS files.
-
 Mixins are only compiled into a stylesheet when they are used, so bear in mind this library does not add
-filesize to your compilied CSS file.
+filesize to your compilied CSS file. Only when you use a mixin, those specific styles are compiled.
 
 ## Available Color Variables:
 These are different shades to CSS default color variables (Except for black & white).
-You can override them in your app LESS file as long as the new
-LESS variables are declared before the mixin imports (Needs more testing)
+You can override them in your app LESS file as long as the new LESS variables are declared after the mixin imports.
 
 ```CSS
 @black
@@ -101,7 +101,7 @@ CSS Grid Style
 
 ## Borders
 
-Black solid border, default:
+Black solid 1px border (default):
 
 ```CSS
 #border.solid();
@@ -119,7 +119,13 @@ Maybe you want 2px green top border only? Pass in top (or bottom, left, right,) 
 #border.solid(top, 2px, green);
 ```
 
-## Absolute Positioning
+If you need paralell top & bottom or left & right borders pass in vertical or horizontal:
+
+```CSS
+#border.solid(vertical, 4px, #ccc);
+```
+
+## Positioning
 
 No default included, specify top-left, bottom-left, top-right or bottom-right.
 Values default to 0 and 0.
@@ -163,26 +169,42 @@ By default color is set to black and background color set to white. Pass in the 
 
 Width and height are common styles to add to elements, use this mixin if width and height are different values:
 The first param is the width value, the second param is the hight value:
+
 ```CSS
 #display.dimensions(200px, 50px);
 ```
 
-If the width and height are the same values pass in the type "equal", then the desired value (default is set to 100px)
+If the width and height are the same values pass in the type 'equal', then the desired value (default is set to 100px)
+
 ```CSS
 #display.dimensions(equal, 200px);
 ```
 
-When you float an elements children left or right, apply this mixin so the parent can retain it's height:
+To style a div as a block use the following mixin:
+You can pass in the size (width & height are always equal), background-color, border-radius and padding values:
+
+```CSS
+#display.block();
+#display.block(200px, red, 8px, 20px);
+```
+
+When you float an element's children left or right, apply this mixin so the parent can retain it's height:
+
 ```CSS
 #display.clearfix();
 ```
 
 When you target the :before and :after pseudo elements apply this mixin to display it.
+This adds the following styles: display: block; content: '';
+You can change the content value by passing it in:
+
 ```CSS
 #display.pseudo();
+#display.pseudo(x);
 ```
 
 If you want to show / hide on specific devices you can use these mixins, as they will take care of the media queries:
+
 ```CSS
 #display.mobile();
 #display.tablet();
@@ -191,25 +213,33 @@ If you want to show / hide on specific devices you can use these mixins, as they
 
 ## Button Mixins
 
-Plain Flat Button Style, you can pass in your color of choice (defaults to @col-primary)
+Plain flat button style, you can pass in your color of choice (defaults to @col-primary):
 
 ```CSS
 #button.flat(green)
 ```
 
-Plain Flat Button Style slight round edges
+Plain flat button style, slight round edges:
 ```CSS
-#button.flat(round-edge, red)
+#button.flat(round-edge, red);
 ```
 
 Plain Flat, Round Button Style
 ```CSS
-#button.flat(round, blue)
+#button.flat(round, blue);
 ```
 
-Style a link anchor tage as a button, pass in your colour of choice
+Style a link anchor tag as a button, pass in your color of choice:
 ```CSS
 #button.link(green);
+```
+
+## Shapes
+For custom shapes there is a mixin for arrow styles.
+Pass in the direction (up, down, left or right), size and color
+
+```CSS
+#shape.arrow(left, 10px, blue);
 ```
 
 ## More Coming Soon. Stay tuned!

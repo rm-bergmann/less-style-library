@@ -4,28 +4,28 @@
     border-left: @size solid transparent;
     border-right: @size solid transparent;
     border-bottom: @size solid @col;
-    #display.equal-dimensions(0);
+    #display.dimensions(equal, 0);
   }
   
   .arrow(@type, @size: 20px, @col: @white) when (@type = down) {
     border-left: @size solid transparent;
     border-right: @size solid transparent;
     border-top: @size solid @col;
-    #display.equal-dimensions(0);
+    #display.dimensions(equal, 0);
   }
   
   .arrow(@type, @size: 20px, @col: @white) when (@type = left) {
     border-top: @size solid transparent;
     border-bottom: @size solid transparent;
     border-right: @size solid @col;
-    #display.equal-dimensions(0);
+    #display.dimensions(equal, 0);
   }
   
   .arrow(@type, @size: 20px, @col: @white) when (@type = right) {
     border-top: @size solid transparent;
     border-bottom: @size solid transparent;
     border-left: @size solid @col;
-    #display.equal-dimensions(0);
+    #display.dimensions(equal, 0);
   }
   
 }
