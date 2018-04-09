@@ -35,6 +35,16 @@
   }
   
   /*
+   * Center all parent's children
+   */
+  
+  .flex(@justify) when (@justify = space) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  /*
    * Set color and background color
    */
 
