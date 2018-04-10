@@ -211,6 +211,13 @@ If you want to show / hide on specific devices you can use these mixins, as they
 #display.desktop();
 ```
 
+## Form field styles
+
+You can style a form input field with the following mixin
+```CSS
+#form.input();
+```
+
 ## Button Mixins
 
 Plain flat button style, you can pass in your color of choice (defaults to @col-primary):
@@ -250,4 +257,4 @@ You can pass in padding, width and height (as the same value) and background-col
 #shape.round(1em, 100px, @black);
 ```
 
-## More Coming Soon. Stay tuned!
+### Please check for updates regularly and report any issues in guthub. 
