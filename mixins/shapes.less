@@ -28,4 +28,11 @@
     #display.dimensions(equal, 0);
   }
   
+  .round(@pad: 1em, @val: 100px, @bg: @black) {
+    padding: @pad;
+    background-color: @bg;
+    border-radius: 50%;
+    #display.dimensions(equal, @val);
+  }
+  
 }

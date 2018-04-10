@@ -12,7 +12,7 @@ LESS lazy loads variables so it will use the last variable definition in scope.
 * import the library in your application LESS file
 
 ## Tip
-Create an imports.less file to import all your less files and import this library last - before all other LESS files.
+Create an imports.less file to import all your less files and import this library last - after all other imports of LESS files.
 
 ```CSS
 @import '/path-to/node_modules/less-style-library/imports';
@@ -200,7 +200,7 @@ You can change the content value by passing it in:
 
 ```CSS
 #display.pseudo();
-#display.pseudo(x);
+#display.pseudo('&raquo;');
 ```
 
 If you want to show / hide on specific devices you can use these mixins, as they will take care of the media queries:
@@ -240,6 +240,14 @@ Pass in the direction (up, down, left or right), size and color
 
 ```CSS
 #shape.arrow(left, 10px, blue);
+```
+
+You can add a round shape with the following mixin:
+You can pass in padding, width and height (as the same value) and background-color.
+
+```CSS
+#shape.round();
+#shape.round(1em, 100px, @black);
 ```
 
 ## More Coming Soon. Stay tuned!
