@@ -24,7 +24,7 @@
     border-radius: 20px;
   }
   
-  .link(@bd-col: @col-primary, @col: @white) {
+  .link(@col: @white, @bg-col: @col-primary) {
     text-decoration: none;
     font-size: 1.2em;
     width: 120px;
@@ -34,8 +34,7 @@
     padding: .6em;
     text-align: center;
     border-radius: .2em;
-    color: @col;
-    #border.solid(1px, @bd-col);
+    #display.colors(@col, @bg-col);
     
     &:hover,
     &.active {

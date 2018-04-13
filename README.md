@@ -236,9 +236,9 @@ Plain Flat, Round Button Style
 #button.flat(round, blue);
 ```
 
-Style a link anchor tag as a button, pass in your color of choice:
+Style a link anchor tag as a button, pass in your color and background color of choice:
 ```CSS
-#button.link(green);
+#button.link(white, blue);
 ```
 
 ## Shapes
