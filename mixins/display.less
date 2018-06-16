@@ -7,31 +7,31 @@
 
  /*
   * Use this for Gridwork:
-  * Default: mobile. This will center the element with margin on each side
-  * @params: width, margin-left. Use percent [%] values
   */
 
-  .grid(@w: 90%, @ml: 5%) when (default()) {
-    width: @w;
-    margin-left: @ml;
+  .grid(@cols: 12, @gap: 20px, @rows: 1, @row-height: auto) when (default()) {
+    display: grid;
+    grid-template-columns: repeat(@cols, 1fr);
+    grid-template-rows: repeat(@rows, @row-height);
+    grid-column-gap: @gap;
+  }
+ 
+  .grid(@type, @cols: 12, @gap: 20px, @rows: auto) when (@type = center) {
+    display: grid;
+    grid-template-columns: repeat(@cols, 1fr);
+    grid-template-rows: @rows;
+    grid-column-gap: @gap;
+    place-items: center center;
+    justify-content: center;
   }
   
-  .grid(@type) when (@type = full) {
-    width: 100%;
-    margin-left: 0;
-  }
-   
-  /*
-   * Display vertical padding on elements
-   * Less on mobile more on desktop
-   */
-
-  .vertical-padding(@val: .5rem) {
-    padding: @val 0;
-
-    @media @tablet {
-      padding: (@val * 2) 0;
-    }
+  .grid(@type, @cols: 12, @gap: 20px, @rows: auto) when (@type = stretch) {
+    display: grid;
+    grid-template-columns: repeat(@cols, 1fr);
+    grid-template-rows: @rows;
+    grid-column-gap: @gap;
+    place-items: center stretch;
+    justify-content: center;
   }
   
   /*
@@ -109,6 +109,7 @@
    */
 
   .clearfix() {
+    
     &:before,
     &:after {
       content: '';
