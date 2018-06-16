@@ -16,7 +16,7 @@
   .column(@type, @start: 1, @span: 2) when (@type = responsive) {
     #grid.column(across);
     
-    @media @medium-screen-min {
+    @media @tablet-min {
       grid-column: @start / span @span;
     }
   }

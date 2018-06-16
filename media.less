@@ -1,30 +1,22 @@
 // 320px  - 419px @tiny-screen
-@tiny-screen-max:   ~"only screen and (max-width: 319px)";  // Target below 320px
-@small-screen-max:  ~"only screen and (max-width: 479px)";  // Target genereal Mobile Only
+@mobile-tiny:  ~"only screen and (max-width: 319px)";  // Target below 320px
+@mobile-min:   ~"only screen and (min-width: 320px)";  // Default Mobiles 320 360 375 412 414
 
-@tiny-screen-min:   ~"only screen and (min-width: 320px)"; // Default Mobiles 320 360 375 412 414
-@small-screen-min:  ~"only screen and (min-width: 420px)"; // Default large mobiles
+@mobile-max:   ~"only screen and (max-width: 479px)";  // Target genereal Mobile Only
+@mobile-large: ~"only screen and (min-width: 480px)";  // Default large mobiles
 
 // 481px  - 767px @medium-screen
-@medium-screen-max:  ~"only screen and (max-width: 767px)";
-@medium-screen-min:  ~"only screen and (min-width: 768px)";
-
+@tablet-max:  ~"only screen and (max-width: 767px)";
+@tablet-min:  ~"only screen and (min-width: 768px)";
 
 // 768px  - 1023px @medium-plus-screen
-@medium-plus-screen-max:  ~"only screen and (max-width: 991px)";
-@medium-plus-screen-min:  ~"only screen and (min-width: 992px)";
-
+@desktop-narrow-max:  ~"only screen and (max-width: 991px)";
+@desktop-narrow-min:  ~"only screen and (min-width: 992px)";
 
 // 1024px - 1279px @large-screen
-@large-screen-screen-max:  ~"only screen and (max-width: 1279px)";
-@large-screen-screen-min:  ~"only screen and (min-width: 1280px)";
-
-
-// 1280px - 1360px @x-large-screen
-@x-large-screen-screen-max:  ~"only screen and (max-width: 1359px)";
-@x-large-screen-screen-min:  ~"only screen and (min-width: 1360px)";
-
+@desktop-wide-max:  ~"only screen and (max-width: 1279px)";
+@desktop-wide-min:  ~"only screen and (min-width: 1280px)";
 
 // 1920px+ @hd-screen
-@hd-screen-screen-max:  ~"only screen and (max-width: 1919px)";
-@hd-screen-screen-min:  ~"only screen and (min-width: 1920px)";
+@hd-max:  ~"only screen and (max-width: 1920px)";
+@hd-min:  ~"only screen and (min-width: 1920px)";
