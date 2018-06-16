@@ -11,18 +11,13 @@ LESS lazy loads variables so it will use the last variable definition in scope.
 * $ npm i --save-dev less-style-library
 * Import the library in your application LESS file
 
-```CSS
-@import '../node_modules/less-style-library/imports';
-```
-
 ## Tip
 Create an imports.less file to import all your less files and import this library last - after all other imports of LESS files.
 Remember to check the relative path to you're application's node_modules.
 
-My application structure:
-
-/node_modules/*
-/LESS/imports.less
+```CSS
+@import '../node_modules/less-style-library/imports';
+```
 
 Mixins are only compiled into a stylesheet when they are used, so bear in mind this library does not add
 filesize to your compilied CSS file. Only when you use a mixin, those specific styles are compiled.
@@ -67,40 +62,46 @@ You can override these variables with your choice of colours
 Target below 320px:
 
 ```CSS
-@media @tiny-screen-max {} 
+@media @mobile-tiny {
+  // Insert styles
+} 
 ```
 
 Target above 320px:
 
 ```CSS
-@media @tiny-screen-min {}
+@media @mobile-min {
+ // Insert styles
+}
 ```
 
 Target below 479px
 
 ```CSS
-@media @small-screen-max {}
+@media @mobile-max {
+  // Insert styles
+}
 ```
 
-Target above 420px
+Target above 480px
 
 ```CSS
-@media @small-screen-min {}
+@media @mobile-large {
+  // Insert styles
+}
 ```
 
 More Target Screen Sizes:
 
 ```CSS
-@media @medium-screen-max {};
-@media @medium-screen-min {};
-@media @medium-plus-screen-max {};
-@media @medium-plus-screen-min {};
-@media @large-screen-screen-max {};
-@media @large-screen-screen-min {};
-@media @x-large-screen-screen-max {};
-@media @x-large-screen-screen-min {};
-@media @hd-screen-screen-max {};
-@media @hd-screen-screen-min {};
+@media @tablet-max {};
+@media @tablet-min {};
+@desktop-narrow-max {};
+@desktop-narrow-min {};
+@desktop-wide-max {};
+@desktop-wide-min {};
+@hd-max {};
+@hd-min {};
 ```
 
 # CSS Grid Styles
