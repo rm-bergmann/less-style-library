@@ -1,7 +1,7 @@
 #gradient {
   
-  .linear() {
-    background: linear-gradient(to bottom, @col-primary, @col-secondary);
+  .linear(@top: @col-primary, @bottom: @col-secondary) {
+    background: linear-gradient(to bottom, @top, @bottom);
   }
   
 }
