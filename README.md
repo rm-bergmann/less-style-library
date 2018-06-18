@@ -293,6 +293,11 @@ If you want to show / hide on specific devices you can use these mixins, as they
 #display.desktop();
 ```
 
+I have a mixin for a situation where Chrome doesn't render webfonts. (This may have been a bug and fixed in a later version).
+```CSS
+#display.webkit-delay();
+```
+
 ## Form field styles
 
 You can style a form input field with the following mixin
@@ -321,6 +326,14 @@ Plain Flat, Round Button Style
 Style a link anchor tag as a button, pass in your color and background color of choice:
 ```CSS
 #button.link(white, blue);
+```
+
+## Gradient
+A nice, simple gradient mixin. By default the top color will be the primary color and bottom the secondary color.
+We can pass in the colours of choice
+```CSS
+#gradient.linear();
+#gradient.linear(gray, black);
 ```
 
 ## Shapes
