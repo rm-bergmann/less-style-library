@@ -96,12 +96,12 @@ More Target Screen Sizes:
 ```CSS
 @media @tablet-max {};
 @media @tablet-min {};
-@desktop-narrow-max {};
-@desktop-narrow-min {};
-@desktop-wide-max {};
-@desktop-wide-min {};
-@hd-max {};
-@hd-min {};
+@media @desktop-narrow-max {};
+@media @desktop-narrow-min {};
+@media @desktop-wide-max {};
+@media @desktop-wide-min {};
+@media @hd-max {};
+@media @hd-min {};
 ```
 
 # CSS Grid Styles
@@ -238,6 +238,13 @@ Apply this mixin to the parent element which will align children from left to ri
 #display.flex(space);
 ```
 
+To align children to left (start) or right (end) of a container apply the following mixin to the container element
+
+```CSS
+#display.flex(start);
+#display.flex(end);
+```
+
 To minimize common repeatition, this mixin takes color as the first param and background-color as the second param.
 By default color is set to black and background color set to white. Pass in the colours of your choice.
 
@@ -298,9 +305,46 @@ I have a mixin for a situation where Chrome doesn't render webfonts. (This may h
 #display.webkit-delay();
 ```
 
+## Font mixins
+
+Turn 4 lines of code into 1 with the following mixin. It takes font-size, font-weight, line-height and text-align.
+The defaults are set as: font-size: 1em; font-weight: 400; line-height: 1; and text-align: left;
+To change the defaults, just pass in your custom values. Lets set a center-aligned, 14px bold font with 1.2 line height: 
+```CSS
+#font.settings(); /* defaults */
+#font.settings(14px, bold, 1.2, center);
+```
+
+We don't always use all of the styles, so there's another 3 mixins with the above styles broken down:
+The first and default font sizing mixin will add font-size, font-weight and line-height, same default values as the font settings mixin.
+```CSS
+#font.size();
+#font.size(20px, 700, 1.3);
+```
+
+For only font-size and font-weight, pass in 'font-weight':
+```CSS
+#font.size(font-weight);
+#font.size(font-weight, 1.2rem, bold);
+```
+
+For only font-size and line-height, pass in 'line-height':
+```CSS
+#font.size(line-height);
+#font.size(line-height, 18px, 1.2);
+```
+
+## Image replacement / Hiding text
+I like using the following mixins for image replacement / hiding text:
+The first is for default image replacement, and the second one is more accessibilty friendly.
+```CSS
+#hide.text();
+#hide.text(accessible);
+```
+
 ## Form field styles
 
-You can style a form input field with the following mixin
+You can style a form input field with the following mixin:
 ```CSS
 #form.input();
 ```
@@ -310,7 +354,7 @@ You can style a form input field with the following mixin
 Plain flat button style, you can pass in your color of choice (defaults to @col-primary):
 
 ```CSS
-#button.flat(green)
+#button.flat(green);
 ```
 
 Plain flat button style, slight round edges:
