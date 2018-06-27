@@ -45,6 +45,26 @@
   }
   
   /*
+   * Align children to left of container
+   */
+  
+  .flex(@align) when (@align = start) {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+  }
+  
+  /*
+   * Align children to right of container
+   */
+  
+  .flex(@align) when (@align = end) {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+  }
+  
+  /*
    * Set color and background color
    */
 
