@@ -1,40 +1,26 @@
 #font {
 
-  .type(@size: 1em, @style: normal) when (default()) {
-    font-family: @font-sans, sans-serif;
+  .settings(@size: 1em, @lh: 1, @fw: 400, @align: left) {
     font-size: @size;
-    font-style: @style;
-  }
-  
-  .type(@type, @size: 1em, @style: normal) when (@type = serif) {
-    font-family: @font-serif, serif;
-    font-size: @size;
-    font-style: @style;
-    letter-spacing: 2px;
-  }
-  
-  .settings(@size: 11px, @lh: 15px, @fw: normal, @align: center) {
-    font-size: @size;
-    line-height: @lh;
     font-weight: @fw;
+    line-height: @lh;
     text-align: @align;
   }
 
-  .size(@size: 1em, @lh: normal) {
+  .size(@size: 1em, @fw: 400, @lh: 1) when (default()) {
+    font-size: @size;
+    font-weight: @fw;
+    line-height: @lh;
+  }
+  
+  .size(@type, @size: 1em, @fw: 400) when (@type = font-weight) {
+    font-size: @size;
+    font-weight: @fw;
+  }
+  
+  .size(@type, @size: 1em, @lh: 1) when (@type = line-height) {
     font-size: @size;
     line-height: @lh;
   }
 
-  .style(@size: 1em, @weight: 400, @align: center) {
-    font-size: @size;
-    font-weight: @weight;
-    text-align: @align;
-  }
-  
 }
-
-@font-sans:  'Volkhov';
-@font-serif: 'Suez One';
-
-@import url('https://fonts.googleapis.com/css?family=Volkhov');
-@import url('https://fonts.googleapis.com/css?family=Suez+One');
