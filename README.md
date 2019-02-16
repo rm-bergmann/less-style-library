@@ -342,6 +342,11 @@ The first is for default image replacement, and the second one is more accessibi
 #hide.text(accessible);
 ```
 
+Use this if you need both ```display: none``` and ```visbility:hidden``` styles.
+```CSS
+#hide.element();
+```
+
 ## Form field styles
 
 You can style a form input field with the following mixin:
@@ -396,4 +401,4 @@ You can pass in padding, width and height (as the same value) and background-col
 #shape.round(1em, 100px, @black);
 ```
 
-### Please check for updates regularly and report any issues in guthub. 
+### Please check for updates regularly and report any issues in github. 

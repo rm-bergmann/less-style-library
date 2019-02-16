@@ -90,30 +90,15 @@
     width: @val;
     height: @val;
   }
-  
-  /*
-   * Display a block. Width & Height always equal.
-   * Background-color, Padding and Border-radius can be changed.
-   * @paramas: @size = {width & height}, background-color, border-raduis & padding
-   */
 
-  .block(@size: 100px, @bg: @black, @br: 0, @pad: 1em) {
-    display: block;
-    background: @bg;
-    border-radius: @br;
-    padding: @pad;
-    #display.dimensions(equal, @size);
+  /*
+   * Set min-width & max-width
+   */
+  .width(@min: 100px, @max: 100%) {
+    min-width: @min;
+    max-width: @max;
   }
   
-  /*
-   * I don't really use visibility hidden but could be useful
-   */
-  
-  .hidden() {
-    display: none;
-    visibility: hidden;
-  }
-
   /*
    * Zero spacing inside and outside element
    */
