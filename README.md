@@ -37,6 +37,8 @@ You can override them in your app LESS file as long as the new LESS variables ar
 @yellow
 @pink 
 @gray
+@teal
+@cyan
 ```
 
 ## More shades:
@@ -71,7 +73,7 @@ Target above 320px:
 
 ```CSS
 @media @mobile-min {
- // Insert styles
+  // Insert styles
 }
 ```
 
