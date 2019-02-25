@@ -1,70 +1,58 @@
 #button {
   
-  .defaults() {
+  .defaults(@pad: 1rem, @fs: 1rem) {
     border: none;
     outline: none;
-    padding: .8em;
-    font-size: .8em
+    padding: @pad;
+    font-size: @fs;
+    cursor: pointer;
+    transition: all .2s;
+    
+    &:hover {
+      background-color: darken(@bg, 20%);
+    }
+    
+    &:active {
+      background-color: darken(@bg, 40%);
+      font-size: calc(~'@{fs} - 1px');
+    }
   }
   
-  .flat(@col: @col-primary) when (default()) {
+  .flat(@bg: @col-primary, @col: white) when (default()) {
     #button.defaults();
-    background: @col;
+    #display.colors(@col, @bg);
   }
   
-  .flat(@type, @col: @col-primary) when (@type = round-edge) {
+  .flat(@type, @bg: @col-primary, @col: white, @radius: 4px) when (@type = rounded) {
     #button.defaults();
-    background: @col;
-    border-radius: 4px;
+    #display.colors(@col, @bg);
+    border-radius: @radius;
   }
   
-  .flat(@type, @col: @col-primary) when (@type = round) {
+  .flat(@type, @bg: @col-primary, @col: white) when (@type = round) {
     #button.defaults();
-    background: @col;
+    #display.colors(@col, @bg);
     border-radius: 20px;
   }
+
+  .custom(@bg: @col-primary, @col: white, @pad: 1rem, @fs: 1rem, @radius: 0) when (default()) {
+    #button.defaults(@pad, @fs);
+    #display.colors(@col, @bg);
+    border-radius: @radius;
+  }
   
-  .link(@col: @white, @bg-col: @col-primary) {
+  .link(@bg-col: @col-primary, @col: white, @pad: .7rem 1rem, @fs: 1rem, @radius: 0) {
     text-decoration: none;
-    font-size: 1.2em;
-    width: 120px;
+    font-size: @fs;
     display: inline-block;
-    float: left;
-    margin-right: 1em;
-    padding: .6em;
+    padding: @pad;
     text-align: center;
-    border-radius: .2em;
+    border-radius: @radius;
     #display.colors(@col, @bg-col);
     
     &:hover,
     &.active {
-      #display.colors(white, @col-primary);
+      background-color: darken(@bg-col, 20%);
     }
   }
-  
-  // @Todo: Test this button style 
-  /*
-  .main() {
-    font-size: 1.4em;
-    width: 100%;
-    padding: .5em .8em .7em .8em;
-    white-space: normal;
-    color: #fff;
-    border: 2px solid hsl(0, 84%, 40%);
-    border-radius: .2em;
-    background: @col-2;
-    text-align: center;
-    cursor: pointer;
-
-    &:hover,
-    &:active,
-    &:focus {
-      background-color: #f03232;
-    }
-
-    @media @min-tablet {
-      padding: .5em .8em;
-    }
-  }
-  */
 }

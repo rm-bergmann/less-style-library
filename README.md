@@ -8,15 +8,43 @@ therefore keep in mind that this library should be imported before all your appl
 LESS lazy loads variables so it will use the last variable definition in scope.
 
 # Install With NPM:
-* $ npm i --save-dev less-style-library
-* Import the library in your application LESS file
 
-## Tip
-Create an imports.less file to import all your less files and import this library last - after all other imports of LESS files.
-Remember to check the relative path to you're application's node_modules.
+```bash
+$ npm i --save-dev less-style-library
+```
+
+# Import the library in your application.
+
+I create a new LESS file called imports.less and use a CSS import to import all my LESS files
+with a relative import. I have not tried importing it in an index.js file with an absolute import.
+I will test that soon.
 
 ```CSS
 @import '../node_modules/less-style-library/imports';
+```
+Remember to check the relative path to you're application's node_modules.
+
+Make sure this library is imported *before* all other LESS files in the application.
+This will allow you to override the default variables. For example, if you want to set your
+own colors:
+
+/* Default */
+```css
+@blue: #003bff;
+
+/* Override */
+@blue: #000e8c;
+
+p {
+  color: @blue;
+}
+```
+
+Compiles to:
+```css
+p {
+  color: #000e8c;
+}
 ```
 
 Mixins are only compiled into a stylesheet when they are used, so bear in mind this library does not add
@@ -64,7 +92,7 @@ You can override these variables with your choice of colours
 Target below 320px:
 
 ```CSS
-@media @mobile-tiny {
+@media @mobile-small-max {
   // Insert styles
 } 
 ```
@@ -72,7 +100,7 @@ Target below 320px:
 Target above 320px:
 
 ```CSS
-@media @mobile-min {
+@media @mobile-small-min {
   // Insert styles
 }
 ```
@@ -80,7 +108,7 @@ Target above 320px:
 Target below 479px
 
 ```CSS
-@media @mobile-max {
+@media @mobile-large-max {
   // Insert styles
 }
 ```
@@ -88,7 +116,7 @@ Target below 479px
 Target above 480px
 
 ```CSS
-@media @mobile-large {
+@media @mobile-large-min {
   // Insert styles
 }
 ```
@@ -96,12 +124,14 @@ Target above 480px
 More Target Screen Sizes:
 
 ```CSS
-@media @tablet-max {};
-@media @tablet-min {};
-@media @desktop-narrow-max {};
-@media @desktop-narrow-min {};
-@media @desktop-wide-max {};
-@media @desktop-wide-min {};
+@media @tablet-small-max {};
+@media @tablet-small-min {};
+@media @tablet-large-max {};
+@media @tablet-large-min {};
+@media @desktop-small-max {};
+@media @desktop-small-min {};
+@media @desktop-large-max {};
+@media @desktop-large-min {};
 @media @hd-max {};
 @media @hd-min {};
 ```
@@ -366,7 +396,7 @@ Plain flat button style, you can pass in your color of choice (defaults to @col-
 
 Plain flat button style, slight round edges:
 ```CSS
-#button.flat(round-edge, red);
+#button.flat(rounded, red);
 ```
 
 Plain Flat, Round Button Style
@@ -374,9 +404,18 @@ Plain Flat, Round Button Style
 #button.flat(round, blue);
 ```
 
-Style a link anchor tag as a button, pass in your color and background color of choice:
+You can customize the padding and font-size and border-radius as well if you like:
+Param order:
+background-color, color, padding, font-size, border-radius
+```css
+#button.custom(red, white, 20px, 14px, 8px);
+```
+
+Style a link anchor tag as a button, pass in your color and background color of choice.
+You can also add custom padding, font-size and border-radius values (as above)
 ```CSS
-#button.link(white, blue);
+#button.link(blue, white);
+#button.link(gray, black, 10px, 12px, 20px);
 ```
 
 ## Gradient

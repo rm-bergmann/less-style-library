@@ -1,15 +1,15 @@
 {
   "name": "less-style-library",
-  "version": "1.1.6",
+  "version": "1.2.0",
   "description": "Style and mixin library to for faster CSS development.",
   "author": "Rick Bergmann",
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/rm-bergmann/less-style-library"
   },
   "dependencies": {
-    "less": "*"
+    "less": ">=3.5.0"
   },
   "keywords": ["css", "less", "css grid", "mixins"]
 }
