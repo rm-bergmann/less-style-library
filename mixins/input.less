@@ -1,0 +1,43 @@
+#input {
+  
+  .colors(@col: black, @bg: lighten(@gray-light, 50%)) {
+    #display.colors(@col, @bg);
+  }
+  
+  .input-defaults(@fs: 1rem) {
+    padding: .3rem .5rem;
+    font-size: @fs;
+    #display.dimensions(97%, 34px);
+    #border.solid(1px, @color-01);
+    
+    &:focus {
+      border-color: lighten(@color-01, 50%);
+    }
+  }
+
+  .default() {
+    .input-defaults();
+    .colors();
+  }
+  
+  .default(@type) when (@type = rounded) {
+    .input-defaults();
+    .colors();
+    border-radius: 4px;
+  }
+  
+  .default(@type) when (@type = dark) {
+    .input-defaults();
+    .colors(lighten(@gray-light, 50%), darken(@gray-dark, 20%));
+  }
+  
+  .default(@type) when (@type = dark-rounded) {
+    .input-defaults();
+    .colors(lighten(@gray-light, 50%), darken(@gray-dark, 20%));
+    border-radius: 4px;
+  }
+
+  .custom() {
+    
+  }
+}
