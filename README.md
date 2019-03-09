@@ -20,121 +20,28 @@ with a relative import. I have not tried importing it in an index.js file with a
 I will test that soon.
 
 ```CSS
-@import '../node_modules/less-style-library/imports';
-```
-Remember to check the relative path to you're application's node_modules.
-
-Make sure this library is imported *before* all other LESS files in the application.
-This will allow you to override the default variables. For example, if you want to set your
-own colors:
-
-/* Default */
-```css
-@blue: #003bff;
-
-/* Override */
-@blue: #000e8c;
-
-p {
-  color: @blue;
-}
+@import '{path_to}/node_modules/less-style-library/imports';
 ```
 
-Compiles to:
-```css
-p {
-  color: #000e8c;
-}
-```
+Import the library *before* all other LESS files in the application.
+This will allow you to override the default variables with your custom values.
 
 Mixins are only compiled into a stylesheet when they are used, so bear in mind this library does not add
 filesize to your compilied CSS file. Only when you use a mixin, those specific styles are compiled.
 
-## Available Color Variables:
-These are different shades to CSS default color variables (Except for black & white).
-You can override them in your app LESS file as long as the new LESS variables are declared after the mixin imports.
+By default, all default color parameters are set to @color-01 which is set to @blue. You can override @color-01
+with a different color variable or a color of choice. You can change all color variables with your hex color of choice.
 
-```CSS
-@black
-@white
-@blue 
-@green
-@red   
-@purple
-@orange
-@yellow
-@pink 
-@gray
-@teal
-@cyan
-```
+Documentation and examples can be found here: http://less.rickbergmann.com
 
-## More shades:
-You can suffix the above variables (except for black and white) with '-light' and '-dark'
 
-```CSS
-@blue-light 
-@green-light
-@red-dark
-@purple-dark
-```
+### Please check for updates regularly and report any issues in github. Contributions welcome.
 
-## Primary and Secondary Color Variables
-You can override these variables with your choice of colours
 
-```CSS
-@col-primary    /* @blue */
-@col-secondary  /* @gray-light */
-```
 
-## Screen Size Variables for media queries:
 
-Target below 320px:
 
-```CSS
-@media @mobile-small-max {
-  // Insert styles
-} 
-```
 
-Target above 320px:
-
-```CSS
-@media @mobile-small-min {
-  // Insert styles
-}
-```
-
-Target below 479px
-
-```CSS
-@media @mobile-large-max {
-  // Insert styles
-}
-```
-
-Target above 480px
-
-```CSS
-@media @mobile-large-min {
-  // Insert styles
-}
-```
-
-More Target Screen Sizes:
-
-```CSS
-@media @tablet-small-max {};
-@media @tablet-small-min {};
-@media @tablet-large-max {};
-@media @tablet-large-min {};
-@media @desktop-small-max {};
-@media @desktop-small-min {};
-@media @desktop-large-max {};
-@media @desktop-large-min {};
-@media @hd-max {};
-@media @hd-min {};
-```
 
 # CSS Grid Styles
 ### Apply these mixins to the grid container element
@@ -227,7 +134,7 @@ Maybe you want 4px red solid border? No problem, just pass in 4px, and the desir
 #border.solid(4px, #f00);
 ```
 
-Maybe you want 2px green top border only? Pass in top (or bottom, left, right,) border-width value and color
+Maybe you want 2px green top border only? Pass in top (or bottom, left, right) border-width value and color
 
 ```CSS
 #border.solid(top, 2px, green);
@@ -282,10 +189,10 @@ By default color is set to black and background color set to white. Pass in the 
 
 ```CSS
 /* Default foreground and background colors: color: black; background-color: white */
-#display.colours();
+#display.colors();
 
 /* color: white; background-color: blue */
-#display.colours(white, blue);
+#display.colors(white, blue);
 ```
 
 Width and height are common styles to add to elements, use this mixin if width and height are different values:
@@ -299,14 +206,6 @@ If the width and height are the same values pass in the type 'equal', then the d
 
 ```CSS
 #display.dimensions(equal, 200px);
-```
-
-To style a div as a block use the following mixin:
-You can pass in the size (width & height are always equal), background-color, border-radius and padding values:
-
-```CSS
-#display.block();
-#display.block(200px, red, 8px, 20px);
 ```
 
 When you float an element's children left or right, apply this mixin so the parent can retain it's height:
@@ -386,37 +285,7 @@ You can style a form input field with the following mixin:
 #form.input();
 ```
 
-## Button Mixins
 
-Plain flat button style, you can pass in your color of choice (defaults to @col-primary):
-
-```CSS
-#button.flat(green);
-```
-
-Plain flat button style, slight round edges:
-```CSS
-#button.flat(rounded, red);
-```
-
-Plain Flat, Round Button Style
-```CSS
-#button.flat(round, blue);
-```
-
-You can customize the padding and font-size and border-radius as well if you like:
-Param order:
-background-color, color, padding, font-size, border-radius
-```css
-#button.custom(red, white, 20px, 14px, 8px);
-```
-
-Style a link anchor tag as a button, pass in your color and background color of choice.
-You can also add custom padding, font-size and border-radius values (as above)
-```CSS
-#button.link(blue, white);
-#button.link(gray, black, 10px, 12px, 20px);
-```
 
 ## Gradient
 A nice, simple gradient mixin. By default the top color will be the primary color and bottom the secondary color.
@@ -425,6 +294,8 @@ We can pass in the colours of choice
 #gradient.linear();
 #gradient.linear(gray, black);
 ```
+
+
 
 ## Shapes
 For custom shapes there is a mixin for arrow styles.
@@ -442,4 +313,4 @@ You can pass in padding, width and height (as the same value) and background-col
 #shape.round(1em, 100px, @black);
 ```
 
-### Please check for updates regularly and report any issues in github. 
+
