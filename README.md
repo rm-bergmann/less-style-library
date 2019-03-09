@@ -32,15 +32,10 @@ filesize to your compilied CSS file. Only when you use a mixin, those specific s
 By default, all default color parameters are set to @color-01 which is set to @blue. You can override @color-01
 with a different color variable or a color of choice. You can change all color variables with your hex color of choice.
 
-Documentation and examples can be found here: http://less.rickbergmann.com
+For all the documentation, guides and examples on how to use this library please visit the [documentation website](http://less.rickbergmann.com)
 
 
 ### Please check for updates regularly and report any issues in github. Contributions welcome.
-
-
-
-
-
 
 
 # CSS Grid Styles
@@ -278,15 +273,6 @@ Use this if you need both ```display: none``` and ```visbility:hidden``` styles.
 #hide.element();
 ```
 
-## Form field styles
-
-You can style a form input field with the following mixin:
-```CSS
-#form.input();
-```
-
-
-
 ## Gradient
 A nice, simple gradient mixin. By default the top color will be the primary color and bottom the secondary color.
 We can pass in the colours of choice
@@ -294,8 +280,6 @@ We can pass in the colours of choice
 #gradient.linear();
 #gradient.linear(gray, black);
 ```
-
-
 
 ## Shapes
 For custom shapes there is a mixin for arrow styles.
@@ -312,5 +296,3 @@ You can pass in padding, width and height (as the same value) and background-col
 #shape.round();
 #shape.round(1em, 100px, @black);
 ```
-
-
