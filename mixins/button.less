@@ -18,30 +18,30 @@
     }
   }
   
-  .flat(@bg: @col-primary, @col: white) when (default()) {
+  .flat(@bg: @color-01, @col: white) when (default()) {
     #button.defaults();
     #display.colors(@col, @bg);
   }
   
-  .flat(@type, @bg: @col-primary, @col: white, @radius: 4px) when (@type = rounded) {
+  .flat(@type, @bg: @color-01, @col: white, @radius: 4px) when (@type = rounded) {
     #button.defaults();
     #display.colors(@col, @bg);
     border-radius: @radius;
   }
   
-  .flat(@type, @bg: @col-primary, @col: white) when (@type = round) {
+  .flat(@type, @bg: @color-01, @col: white) when (@type = round) {
     #button.defaults();
     #display.colors(@col, @bg);
     border-radius: 20px;
   }
 
-  .custom(@bg: @col-primary, @col: white, @pad: 1rem, @fs: 1rem, @radius: 0) when (default()) {
+  .custom(@bg: @color-01, @col: white, @pad: 1rem, @fs: 1rem, @radius: 0) when (default()) {
     #button.defaults(@pad, @fs);
     #display.colors(@col, @bg);
     border-radius: @radius;
   }
   
-  .link(@bg-col: @col-primary, @col: white, @pad: .7rem 1rem, @fs: 1rem, @radius: 0) {
+  .link(@bg-col: @color-01, @col: white, @pad: .7rem 1rem, @fs: 1rem, @radius: 0) {
     text-decoration: none;
     font-size: @fs;
     display: inline-block;
