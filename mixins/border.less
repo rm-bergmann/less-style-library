@@ -1,33 +1,41 @@
 #border {
-  
   .solid(@size: 1px, @col: black) when (default()) {
     border: @size solid @col;
   }
-  
+
   .solid(@type, @size: 1px, @col: white) when (@type = horizontal) {
     border-top: @size solid @col;
     border-bottom: @size solid @col;
   }
-  
+
   .solid(@type, @size: 1px, @col: white) when (@type = vertical) {
     border-left: @size solid @col;
     border-right: @size solid @col;
   }
-  
+
   .solid(@type, @size: 1px, @col: white) when (@type = top) {
     border-top: @size solid @col;
   }
-  
+
   .solid(@type, @size: 1px, @col: white) when (@type = bottom) {
     border-bottom: @size solid @col;
   }
-  
+
   .solid(@type, @size: 1px, @col: white) when (@type = left) {
     border-left: @size solid @col;
   }
-  
+
   .solid(@type, @size: 1px, @col: white) when (@type = right) {
     border-right: @size solid @col;
   }
-  
+
+  .radius(@type, @size: 10px) when (@type = top) {
+    border-top-left-radius: @size;
+    border-top-right-radius: @size;
+  }
+
+  .radius(@type, @size: 10px) when (@type = bottom) {
+    border-bottom-left-radius: @size;
+    border-bottom-right-radius: @size;
+  }
 }
