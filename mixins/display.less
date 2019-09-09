@@ -4,8 +4,7 @@
  */
 
 #display {
-
- /*
+  /*
   * Use this for Gridwork:
   */
 
@@ -15,7 +14,7 @@
     grid-template-rows: repeat(@rows, @row-height);
     grid-column-gap: @gap;
   }
- 
+
   .grid(@type, @cols: 12, @gap: 20px, @rows: auto) when (@type = center) {
     display: grid;
     grid-template-columns: repeat(@cols, 1fr);
@@ -24,7 +23,7 @@
     place-items: center center;
     justify-content: center;
   }
-  
+
   .grid(@type, @cols: 12, @gap: 20px, @rows: auto) when (@type = stretch) {
     display: grid;
     grid-template-columns: repeat(@cols, 1fr);
@@ -33,37 +32,47 @@
     place-items: center stretch;
     justify-content: center;
   }
-  
+
   /*
    * Center all parent's children
    */
-  
+
   .flex(@justify) when (@justify = space) {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
-  
+
   /*
    * Align children to left of container
    */
-  
+
   .flex(@align) when (@align = start) {
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
   }
-  
+
   /*
    * Align children to right of container
    */
-  
+
   .flex(@align) when (@align = end) {
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-end;
   }
-  
+
+  /*
+   * Flexbox Grid alignment
+   */
+
+  .flex(@align) when (@align = grid) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
   /*
    * Set color and background color
    */
@@ -72,7 +81,7 @@
     color: @col;
     background-color: @bg;
   }
-  
+
   /*
    * Set Width & Height
    */
@@ -81,11 +90,11 @@
     width: @w;
     height: @h;
   }
-  
+
   /*
    * Width & Height always equal
    */
-  
+
   .dimensions(@type, @val: 100px) when (@type = equal) {
     width: @val;
     height: @val;
@@ -98,7 +107,7 @@
     min-width: @min;
     max-width: @max;
   }
-  
+
   /*
    * Zero spacing inside and outside element
    */
@@ -114,13 +123,12 @@
    */
 
   .clearfix() {
-    
     &:before,
     &:after {
       content: '';
       display: table;
     }
-    
+
     &:after {
       clear: both;
     }
@@ -148,11 +156,11 @@
       display: block;
     }
   }
-  
+
   /*
    * Hide by default and display on tablet and desktop
    */
-  
+
   .tablet() {
     display: none;
 
@@ -174,17 +182,16 @@
       display: block;
     }
   }
-  
+
   /*
    * Fix for Chrome when it does not render webfonts
    */
-  
+
   .webkit-delay() {
     -webkit-animation-name: fontfix;
-    -webkit-animation-duration: .1s;
+    -webkit-animation-duration: 0.1s;
     -webkit-animation-timing-function: linear;
-    -webkit-animation-delay: .1s;
+    -webkit-animation-delay: 0.1s;
     -webkit-animation-iteration-count: 1;
   }
-  
 }
