@@ -1,0 +1,48 @@
+@screen-size-min: {
+  mobile-small: 320px;
+  mobile-large: 480px;
+  tablet-small: 600px;
+  tablet-large: 768px;
+  laptop-small: 992px;
+  laptop-large: 1280px;
+  desktop-small: 1600px;
+  desktop-large: 1920px;
+}
+
+@screen-size-max: {
+  mobile-small: 319px;
+  mobile-large: 479px;
+  tablet-small: 599px;
+  tablet-large: 767px;
+  laptop-small: 991px;
+  laptop-large: 1279px;
+  desktop-small: 1599px;
+  desktop-large: 1919px;
+}
+
+@min: min-width;
+@max: max-width;
+
+@mobile-small-min: ~'only screen and (@{min}:' @screen-size-min[mobile-small] ~ ')';
+@mobile-small-max: ~'only screen and (@{max}:' @screen-size-max[mobile-small] ~ ')'; 
+
+@mobile-large-min: ~'only screen and (@{min}:' @screen-size-min[mobile-large] ~ ')';
+@mobile-large-max: ~'only screen and (@{max}:' @screen-size-max[mobile-large] ~ ')';
+
+@tablet-small-min: ~'only screen and (@{min}:' @screen-size-min[tablet-small] ~ ')';
+@tablet-small-max: ~'only screen and (@{max}:' @screen-size-max[tablet-small] ~ ')';
+
+@tablet-large-min: ~'only screen and (@{min}:' @screen-size-min[tablet-large] ~ ')';
+@tablet-large-max: ~'only screen and (@{max}:' @screen-size-max[tablet-large] ~ ')';
+
+@laptop-small-min: ~'only screen and (@{min}:' @screen-size-min[desktop-small] ~ ')';
+@laptop-small-max: ~'only screen and (@{max}:' @screen-size-max[desktop-small] ~ ')';
+
+@laptop-large-min: ~'only screen and (@{min}:' @screen-size-min[desktop-large] ~ ')';
+@laptop-large-max: ~'only screen and (@{max}:' @screen-size-max[desktop-large] ~ ')';
+
+@desktop-small-min: ~'only screen and (@{min}:' @screen-size-min[desktop-small] ~ ')';
+@desktop-small-max: ~'only screen and (@{max}:' @screen-size-max[desktop-small] ~ ')';
+
+@desktop-large-min: ~'only screen and (@{min}:' @screen-size-min[desktop-large] ~ ')';
+@desktop-large-max: ~'only screen and (@{max}:' @screen-size-max[desktop-large] ~ ')';
