@@ -23,6 +23,14 @@
     bottom: @bottom;
     right: @right;
   }
+
+  .absolute(@pos, @top: 0, @right: 0, @bottom: 0, @left: 0) when (@pos = all) {
+    position: absolute;
+    top: @top;
+    right: @right;
+    bottom: @bottom;
+    left: @left;
+  }
   
   .relative(@pos, @top: 0, @left: 0) when (@pos = top-left) {
     position: relative;
@@ -47,6 +55,14 @@
     bottom: @bottom;
     right: @right;
   }
+
+  .relative(@pos, @top: 0, @right: 0, @bottom: 0, @left: 0) when (@pos = all) {
+    position: absolute;
+    top: @top;
+    right: @right;
+    bottom: @bottom;
+    left: @left;
+  }
   
   .fixed(@pos, @top: 0, @left: 0) when (@pos = top-left) {
     position: fixed;
@@ -70,6 +86,14 @@
     position: fixed;
     bottom: @bottom;
     right: @right;
+  }
+
+  .fixed(@pos, @top: 0, @right: 0, @bottom: 0, @left: 0) when (@pos = all) {
+    position: absolute;
+    top: @top;
+    right: @right;
+    bottom: @bottom;
+    left: @left;
   }
   
 }
