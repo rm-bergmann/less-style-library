@@ -1,26 +1,21 @@
+@font-groups: {
+  sans: Arial, Helvetica, sans-serif;
+  serif: Georgia, 'Times New Roman', Times, serif;
+}
+
 #font {
 
-  .settings(@size: 1em, @lh: 1, @fw: 400, @align: left) {
+  .settings(@size: 1rem, @fw: 400) {
     font-size: @size;
     font-weight: @fw;
-    line-height: @lh;
-    text-align: @align;
   }
 
-  .size(@size: 1em, @fw: 400, @lh: 1) when (default()) {
-    font-size: @size;
-    font-weight: @fw;
-    line-height: @lh;
+  .type(@type) when (default()) {
+    font-family: @font-groups[sans];
   }
-  
-  .size(@type, @size: 1em, @fw: 400) when (@type = font-weight) {
-    font-size: @size;
-    font-weight: @fw;
-  }
-  
-  .size(@type, @size: 1em, @lh: 1) when (@type = line-height) {
-    font-size: @size;
-    line-height: @lh;
+
+  .type(@type) when (@type = serif) {
+    font-family: @font-groups[serif];
   }
 
 }
