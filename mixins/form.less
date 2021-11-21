@@ -1,0 +1,94 @@
+#form {
+
+  .colors(@col: black, @bg: lighten(@gray-light, 50%)) {
+    #display.colors(@col, @bg);
+  }
+
+  // Form Labels
+
+  .label() {
+    display: block;
+    cursor: pointer;
+    font-family: @primary-font;
+    #font.settings(1rem, 500);
+  }
+
+  // Form Inputs
+
+  .input() {
+    padding: 0.3rem 0.5rem;
+    font-size: 1rem;
+    #display.dimensions(100%, 35px);
+
+    &:focus {
+      border-color: lighten(@color-01, 50%);
+    }
+  }
+
+  .input(@type) when (@type = rounded) {
+    .input();
+    .colors();
+    border-radius: 4px;
+  }
+
+  .input(@type) when (@type = dark) {
+    .input();
+    .colors(lighten(@gray-light, 50%), darken(@gray-dark, 20%));
+  }
+
+  .input(@type) when (@type = dark-rounded) {
+    .input();
+    .colors(lighten(@gray-light, 50%), darken(@gray-dark, 20%));
+    border-radius: 4px;
+  }
+
+  // Form Select
+  .select(@width: 100%, @border-color: @color-01) when (default()) {
+    padding: 0.3rem 0.5rem;
+    font-size: 1rem;
+    box-shadow: 1px 1px 1px @gray-light;
+    appearance: none;
+    background: linear-gradient(45deg, @gray-light 50%, @gray-dark 50%),
+      linear-gradient(135deg, @gray-dark 50%, @gray-light 50%),
+      white linear-gradient(to right, @gray-light, @gray-light);
+    background-position: calc(100% - 21px) calc(1em + 2px), calc(100% - 16px) calc(1em + 2px),
+      100% 0;
+    background-size: 5px 5px, 5px 5px, 2.5rem 2.5rem;
+    background-repeat: no-repeat;
+    #display.dimensions(@width, 40px);
+    #border.solid(1px, @border-color);
+  }
+
+  .select(@type, @width: 100%, @border-color: @color-01, @radius: 10px) when (@type = rounded) {
+    padding: 0.3rem 0.5rem;
+    font-size: 1rem;
+    border-radius: @radius;
+    box-shadow: 1px 1px 1px @gray-light;
+    appearance: none;
+    background: linear-gradient(45deg, @gray-light 50%, @gray-dark 50%),
+      linear-gradient(135deg, @gray-dark 50%, @gray-light 50%),
+      white linear-gradient(to right, @gray-light, @gray-light);
+    background-position: calc(100% - 21px) calc(1em + 2px), calc(100% - 16px) calc(1em + 2px),
+      100% 0;
+    background-size: 5px 5px, 5px 5px, 2.5rem 2.5rem;
+    background-repeat: no-repeat;
+    #display.dimensions(@width, 40px);
+    #border.solid(1px, @border-color);
+  }
+
+  // Form Textarea
+  .textarea() {
+    border-radius: @settings[radius];
+    padding: .5rem;
+    font-size: 1.2rem;
+    font-family: @primary-font;
+    #display.dimensions(100%, auto);
+    #border.solid(1px, @color-01);
+    #font-type();
+    
+    &:focus {
+      border-color: @color-01;
+    }
+  }
+
+}
