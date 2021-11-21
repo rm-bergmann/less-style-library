@@ -1,4 +1,5 @@
 #grid {
+
   .column(@start: 1, @end: 12) when (default()) {
     grid-column-start: @start;
     grid-column-end: @end;
@@ -26,7 +27,6 @@
   }
 
   .gap(@value) {
-    grid-row-gap: @value;
-    grid-column-gap: @value;
+    gap: @value;
   }
 }
