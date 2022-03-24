@@ -10,12 +10,12 @@
     font-weight: @fw;
   }
 
-  .type(@type) when (default()) {
-    font-family: @font-groups[sans];
+  .family() when (default()) {
+    font-family: @settings[primary-font], @font-groups[sans];
   }
 
-  .type(@type) when (@type = serif) {
-    font-family: @font-groups[serif];
+  .family(@type) when (@type = serif) {
+    font-family: @settings[secondary-font], @font-groups[serif];
   }
 
 }

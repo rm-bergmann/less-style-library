@@ -1,44 +1,367 @@
-// Set main app colors here:
-@color-01: @blue;
-@color-02: @gray-light;
-@color-03: @blue-light;
+// Color Group shades taken from https://www.w3schools.com/colors/colors_groups.asp
+// https://www.w3schools.com/w3css/w3css_colors.asp
+// Additional shades generated from https://coolors.co/
 
-@blue: #003bff;
-@blue-light: lighten(@blue, 15%);
-@blue-dark:  darken(@blue, 15%);
+@white: {
+  01: #FFFFFF;
+  02: #FFFAFA;
+  03: #F5FFFA;
+  04: #F0FFFF;
+  05: #F0F8FF;
+  06: #F8F8FF;
+  07: #FFE4E1;
+}
 
-@green: #21c465;
-@green-light: lighten(@green, 10%);
-@green-dark:  darken(@green, 15%);
+@gray-light: {
+  01: #F1F1F1;
+  02: #FBFBFB;
+  03: #FCFCFC;
+  04: #F5F5F5;
+  05: #EAEAEA;
+  06: #D0CFEC;
+  07: #CCCCCC;
+  08: #BFC0C0;
+  09: #DCDCDC;
+  10: #D3D3D3;
+  11: #C0C0C0;
+  12: #A9A9A9;
+  13: #E0FFFF;
+  14: #DEE0DB;
+  15: #B0C4DE;
+  16: #A3BBAD;
+}
 
-@red: #f92a2a; 
-@red-light: lighten(@red, 10%);
-@red-dark:  darken(@red, 15%);
+@gray: {
+  01: #9E9E9E;
+  02: #7D7C84;
+  03: #748067;
+  04: #696969;
+  05: #808080;
+}
 
-@purple: #8e00e0;
-@purple-light: lighten(@purple, 10%);
-@purple-dark:  darken(@purple, 15%);
+@gray-dark: {
+  01: #616161;
+  02: #635C51;
+  03: #3F4045;
+  04: #2D3142;
+  05: #2a2a3b;
+}
 
-@teal: #036b9b;
-@teal-light: lighten(@teal, 10%);
-@teal-dark:  darken(@teal, 15%);
+@black: {
+  01: #000000;
+  02: #050404;
+  03: #0B0A07;
+}
 
-@orange: #ed5f0e;
-@orange-light: lighten(@orange, 10%);
-@orange-dark:  darken(@orange, 15%);
+@pink-pale: {
+  01: #FFF0F5;
+  02: #E5C2C0;
+  03: #EDC7CF;
+}
 
-@yellow: #f7e200;
-@yellow-light: lighten(@yellow, 10%);
-@yellow-dark:  darken(@yellow, 15%);
+@pink-light: {
+  01: #FFC0CB;
+  02: #FFB6C1;
+}
 
-@pink: #f975cb;
-@pink-light: lighten(@pink, 10%);
-@pink-dark:  darken(@pink, 15%);
+@pink: {
+  01: #FF69B4;
+  02: #DB7093;
+  03: #D741A7;
+  04: #A663CC;
+}
 
-@gray: #7a7a7a;
-@gray-light: lighten(@gray, 10%);
-@gray-dark:  darken(@gray, 15%);
+@pink-dark: {
+  01: #FF1493;
+  02: #E91E63;
+  03: #C71585;
+  04: #893168;
+}
 
-@cyan: #36bdf7;
-@cyan-light: lighten(@cyan, 10%);
-@cyan-dark:  darken(@cyan, 15%);
+@purple-pale: { 
+  01: #E6E6FA;
+  02: #D8BFD8;
+  03: #B298DC;
+  04: #DDA0DD;
+}
+
+@purple: {
+  01: #DA70D6;
+  02: #EE82EE;
+  03: #FF00FF;
+  04: #BA55D3;
+  05: #9932CC;
+  06: #9400D3;
+  07: #8A2BE2;
+  08: #8B008B;
+  09: #800080;
+  10: #6F2DBD;
+  11: #9370DB;
+  12: #7B68EE;
+  13: #6A5ACD;
+  14: #483D8B;
+  15: #663399;
+  16: #4B0082;
+  17: #3A1772;
+  18: #392F5A;
+  19: #39304A;
+  20: #3300DD;
+}
+
+@purple-deep: {
+  01: #673AB7;
+  02: #30292F;
+  03: #2E1C2B;
+  04: #4A1942;
+}
+
+@indigo: {
+  01: #3F51B5;
+}
+
+@red-pale: {
+  01: #FFDDDD;
+  02: #BC8F8F;
+}
+
+@light-red: {
+  01: #FFA07A;
+  02: #FA8072;
+  04: #F08080;
+  02: #CD5C5C;
+}
+
+@red: {
+  01: #F44336;
+  02: #FF0000;
+  03: #A52A2A;
+}
+
+@red-dark: {
+  01: #B22222;
+  02: #DC143C;
+  03: #8B0000;
+}
+
+@orange-pale: {
+  01: #FFF5EE;
+  02: #F5F5DC;
+  03: #FFFAF0;
+  04: #FAEBD7;
+  05: #FAF0E6;
+  06: #C6AE82;
+  07: #FDF5E6;
+  08: #FFF8F0;
+  09: #FFF8DC;
+  10: #FFEBCD;
+  12: #FFE4C4;
+  13: #FFDEAD;
+  14: #F5DEB3;
+  15: #DEB887;
+  16: #D2B48C;
+  17: #FFEFD5;
+  18: #FFE4B5;
+  19: #FFDAB9;
+}
+
+@orange-light: {
+  01: #FFBFA0;
+  02: #DE8F6E;
+  03: #E9967A;
+}
+
+@orange: {
+  01: #FFA500;
+  02: #FF9900;
+  03: #FF8C00;
+  04: #FF8811;
+  05: #FF9800;
+  06: #D2691E;
+}
+
+@orange-deep: {
+  01: #FF5722;
+  02: #FF6347;
+  03: #FF4500;
+}
+
+@peach: {
+  01: #FF7F50;
+  02: #EF8354;
+  03: #F4A460;
+}
+
+@yellow-pale: {
+  01: #FFFFCC;
+  02: #FFFFE0;
+  03: #FFFACD;
+  04: #FAFAD2;
+  05: #EEE8AA;
+  06: #FFFFF0;
+  07: #EDD892;
+}
+
+@yellow: {
+  01: #FFEB3B;
+  02: #FFFF00;
+  03: #DBD56E;
+  04: #E3D87E;
+  05: #F0EC57;
+  06: #FCB97D;
+}
+
+@amber: {
+  01: #FFC107;
+  02: #FFD700;
+  03: #DEA54B;
+  04: #F2CD5D;
+  05: #F4D06F;
+}
+
+@khaki: {
+  01: #F0E68C;
+  02: #C6B89E;
+  03: #BDB76B;
+  04: #B0A990;
+  05: #989572;
+}
+
+@green-pale: {
+  01: #DDFFDD;
+  02: #F0FFF0;
+  03: #8FBC8F;
+}
+
+@green-light: {
+  01: #8BC34A;
+  02: #88AB75;
+  03: #98FB98;
+  04: #90EE90;
+}
+
+@green: {
+  01: #00FF00;
+  02: #32CD32;
+  03: #4CAF50;
+  04: #0C8346;
+  05: #00FF7F;
+  06: #00FA9A;
+  07: #3CB371;
+  08: #2E8B57;
+  09: #228B22;
+  10: #008000;
+  11: #006400;
+}
+
+@green-grey: {
+  01: #6A8E7F;
+}
+
+@green-dark: {
+  02: #0D160B;
+}
+
+@lime: {
+  01: #CDDC39;
+  02: #9ACD32;
+  03: #ADFF2F;
+  04: #7FFF00;
+  05: #7CFC00;
+}
+
+@olive: {
+  01: #6B8E23;
+  02: #556B2F;
+  03: #808000;
+}
+
+@teal: {
+  01: #008080;
+  02: #009688;
+  03: #20B2AA;
+  04: #008B8B;
+  05: #357266;
+  06: #2D93AD;
+}
+
+@teal-dark: {
+  01: #0D5D56;
+  02: #0E3B43;
+}
+
+@aqua: {
+  01: #00FFFF;
+  02: #9AD5CA;
+  03: #87F6FF;
+  04: #AFEEEE;
+  05: #B9FAF8;
+  06: #66CDAA;
+  07: #44FFD2;
+}
+
+@cyan: {
+  01: #00BCD4;
+  02: #7FFFD4;
+  03: #40E0D0;
+  04: #48D1CC;
+  05: #00CED1;
+  06: #30D5C8;
+}
+
+@blue: {
+  01:	#5F9EA0;
+  02: #4682B4;
+  03: #6495ED;
+  04: #00BFFF;
+  05: #1E90FF;
+  06: #50B2C0;
+  07: #5398BE;
+  08: #4169E1;
+}
+
+@blue-pale: {
+  01: #DDFFFF;
+  02: #DAF5FF;
+  03: #B8D0EB;
+}
+
+@blue-light: {
+  01: #87CEEB;
+  02: #ADD8E6;
+  03: #B0E0E6;
+  04: #87CEFA;
+  05: #87CEEB;
+}
+
+@blue-dark: {
+  01: #0000FF;
+  02: #0000CD;
+  03: #00008B;
+  04: #000080;
+  05: #191970;
+  06: #02111B;
+}
+
+@blue-gray: {
+  01: #607D8B;
+  02: #2F4F4F;
+  03: #778899;
+  04: #708090;
+  05: #5D737E;
+  06: #4F5D75;
+}
+
+@brown: {
+  01: #312509;
+  02: #DAA520;
+  03: #B8860B;
+  04: #CD853F;
+  05: #8B4513;
+  06: #A0522D;
+  07: #795548;
+  08: #65532F;
+}
+
+@maroon: {
+  01: #800000;
+}

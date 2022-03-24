@@ -1,24 +1,25 @@
 #gradient {
   
-  .linear(@top: @color-01, @bottom: @color-02) when (default()) {
+  .linear(@top: @theme-colors[primary], @bottom: @theme-colors[secondary]) when (default()) {
     background-image: linear-gradient(to bottom, @top, @bottom);
   }
 
-  .linear(@type, @top: @color-01, @bottom: @color-02) when (@type = top) {
+  .linear(@type, @top: @theme-colors[primary], @bottom: @theme-colors[secondary]) when (@type = top) {
     background-image: linear-gradient(to top, @top, @bottom);
   }
   
-  .linear(@type, @left: @color-01, @right: @color-02) when (@type = left) {
+  .linear(@type, @left: @theme-colors[primary], @right: @theme-colors[secondary]) when (@type = left) {
     background-image: linear-gradient(to left, @left, @right);
   }
   
-  .linear(@type, @left: @color-01, @right: @color-02) when (@type = right) {
+  .linear(@type, @left: @theme-colors[primary], @right: @theme-colors[secondary]) when (@type = right) {
     background-image: linear-gradient(to right, @left, @right);
   }
 
-  .radial(@top: @color-01, @bottom: @color-02) when (default()) {
+  .radial(@top: @theme-colors[primary], @bottom: @theme-colors[secondary]) when (default()) {
     background-image: radial-gradient(@top, @bottom);
   }
 
+  // @TODO: Support angle values
   // background: linear-gradient(90deg, red 0%, blue 35%, #00d4ff 100%);
 }
