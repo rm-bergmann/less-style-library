@@ -1,6 +1,6 @@
 #form {
 
-  .colors(@col: black, @bg: lighten(@gray-light, 50%)) {
+  .colors(@col: black, @bg: lighten(@theme-colors[graylight], 50%)) {
     #display.colors(@col, @bg);
   }
 
@@ -23,24 +23,24 @@
     #display.dimensions(100%, 35px);
 
     &:focus {
-      border-color: lighten(@color-01, 50%);
+      border-color: lighten(@theme-colors[primary], 50%);
     }
   }
 
-  .input(@type) when (@type = rounded) {
+  .input(@type) when (@type =rounded) {
     .input();
     .colors();
     border-radius: 4px;
   }
 
-  .input(@type) when (@type = dark) {
+  .input(@type) when (@type =dark) {
     .input();
-    .colors(lighten(@gray-light, 50%), darken(@gray-dark, 20%));
+    .colors(lighten(@theme-colors[graylight], 50%), darken(@theme-colors[graydark], 20%));
   }
 
-  .input(@type) when (@type = dark-rounded) {
+  .input(@type) when (@type =dark-rounded) {
     .input();
-    .colors(lighten(@gray-light, 50%), darken(@gray-dark, 20%));
+    .colors(lighten(@theme-colors[graylight], 50%), darken(@theme-colors[graydark], 20%));
     border-radius: @settings[border-radius];
   }
 
@@ -49,17 +49,17 @@
     .set-sizes();
     max-width: 400px;
     appearance: none;
-    box-shadow: 1px 1px 1px @gray-light;
-    background: linear-gradient(45deg, @gray-light 50%, @gray-dark 50%),
-                linear-gradient(135deg, @gray-dark 50%, @gray-light 50%),
-        white linear-gradient(to right, @gray-light, @gray-light);
-    background-position: calc(100% - 21px) calc(1em + 2px), 
-                         calc(100% - 16px) calc(1em + 2px),
-                         100% 0;
+    box-shadow: 1px 1px 1px @theme-colors[graylight];
+    background: linear-gradient(45deg, @theme-colors[graylight] 50%, @theme-colors[graydark] 50%),
+      linear-gradient(135deg, @theme-colors[graydark] 50%, @theme-colors[graylight] 50%),
+      white linear-gradient(to right, @theme-colors[graylight], @theme-colors[graylight]);
+    background-position: calc(100% - 21px) calc(1em + 2px),
+      calc(100% - 16px) calc(1em + 2px),
+      100% 0;
     background-size: 5px 5px, 5px 5px, 2.5rem 2.5rem;
     background-repeat: no-repeat;
     #display.dimensions(@width, 44px);
-    #border.solid(1px, @gray-light);
+    #border.solid(1px, @theme-colors[graylight]);
     #font.family();
   }
 
@@ -67,7 +67,7 @@
     .select-default();
   }
 
-  .select(@type) when (@type = rounded) {
+  .select(@type) when (@type =rounded) {
     .select-default();
     border-radius: @settings[border-radius];
   }
@@ -76,14 +76,14 @@
   .textarea() {
     .set-sizes();
     #display.dimensions(100%, auto);
-    #border.solid(1px, @color-01);
+    #border.solid(1px, @theme-colors[primary]);
     #font.family();
     border-radius: @settings[border-radius];
     min-height: 150px;
     overflow: auto;
-    
+
     &:focus {
-      border-color: @color-01;
+      border-color: @theme-colors[primary];
     }
   }
 
