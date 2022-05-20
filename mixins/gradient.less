@@ -1,22 +1,22 @@
 #gradient {
-  
-  .linear(@top: @theme-colors[primary], @bottom: @theme-colors[secondary]) when (default()) {
+
+  .linear(@top: @colors[primary], @bottom: @colors[secondary]) when (default()) {
     background-image: linear-gradient(to bottom, @top, @bottom);
   }
 
-  .linear(@type, @top: @theme-colors[primary], @bottom: @theme-colors[secondary]) when (@type = top) {
+  .linear(@type, @top: @colors[primary], @bottom: @colors[secondary]) when (@type =top) {
     background-image: linear-gradient(to top, @top, @bottom);
   }
-  
-  .linear(@type, @left: @theme-colors[primary], @right: @theme-colors[secondary]) when (@type = left) {
+
+  .linear(@type, @left: @colors[primary], @right: @colors[secondary]) when (@type =left) {
     background-image: linear-gradient(to left, @left, @right);
   }
-  
-  .linear(@type, @left: @theme-colors[primary], @right: @theme-colors[secondary]) when (@type = right) {
+
+  .linear(@type, @left: @colors[primary], @right: @colors[secondary]) when (@type =right) {
     background-image: linear-gradient(to right, @left, @right);
   }
 
-  .radial(@top: @theme-colors[primary], @bottom: @theme-colors[secondary]) when (default()) {
+  .radial(@top: @colors[primary], @bottom: @colors[secondary]) when (default()) {
     background-image: radial-gradient(@top, @bottom);
   }
 

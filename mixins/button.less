@@ -1,5 +1,5 @@
 #button {
-  
+
   .defaults(@pad: 1rem, @fs: 1rem) {
     border: none;
     outline: none;
@@ -7,41 +7,41 @@
     font-size: @fs;
     cursor: pointer;
     transition: all .2s;
-    
+
     &:hover {
       background-color: darken(@bg, 20%);
     }
-    
+
     &:active {
       background-color: darken(@bg, 40%);
       font-size: calc(~'@{fs} - 1px');
     }
   }
-  
-  .flat(@bg: @theme-colors[primary], @col: white) when (default()) {
+
+  .flat(@bg: @colors[primary], @col: white) when (default()) {
     #button.defaults();
     #display.colors(@col, @bg);
   }
-  
-  .flat(@type, @bg: @theme-colors[primary], @col: white, @radius: 4px) when (@type = rounded) {
+
+  .flat(@type, @bg: @colors[primary], @col: white, @radius: 4px) when (@type =rounded) {
     #button.defaults();
     #display.colors(@col, @bg);
     border-radius: @radius;
   }
-  
-  .flat(@type, @bg: @theme-colors[primary], @col: white) when (@type = round) {
+
+  .flat(@type, @bg: @colors[primary], @col: white) when (@type =round) {
     #button.defaults();
     #display.colors(@col, @bg);
     border-radius: 20px;
   }
 
-  .custom(@bg: @theme-colors[primary], @col: white, @pad: 1rem, @fs: 1rem, @radius: 0) when (default()) {
+  .custom(@bg: @colors[primary], @col: white, @pad: 1rem, @fs: 1rem, @radius: 0) when (default()) {
     #button.defaults(@pad, @fs);
     #display.colors(@col, @bg);
     border-radius: @radius;
   }
-  
-  .link(@bg-col: @theme-colors[primary], @col: white, @pad: .7rem 1rem, @fs: 1rem, @radius: 0) {
+
+  .link(@bg-col: @colors[primary], @col: white, @pad: .7rem 1rem, @fs: 1rem, @radius: 0) {
     text-decoration: none;
     font-size: @fs;
     display: inline-block;
@@ -49,7 +49,7 @@
     text-align: center;
     border-radius: @radius;
     #display.colors(@col, @bg-col);
-    
+
     &:hover,
     &.active {
       background-color: darken(@bg-col, 20%);

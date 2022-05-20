@@ -1,6 +1,6 @@
 #form {
 
-  .colors(@col: black, @bg: lighten(@theme-colors[graylight], 50%)) {
+  .colors(@col: black, @bg: lighten(@colors[graylight], 50%)) {
     #display.colors(@col, @bg);
   }
 
@@ -23,7 +23,7 @@
     #display.dimensions(100%, 35px);
 
     &:focus {
-      border-color: lighten(@theme-colors[primary], 50%);
+      border-color: lighten(@colors[primary], 50%);
     }
   }
 
@@ -35,12 +35,12 @@
 
   .input(@type) when (@type =dark) {
     .input();
-    .colors(lighten(@theme-colors[graylight], 50%), darken(@theme-colors[graydark], 20%));
+    .colors(lighten(@colors[graylight], 50%), darken(@colors[graydark], 20%));
   }
 
   .input(@type) when (@type =dark-rounded) {
     .input();
-    .colors(lighten(@theme-colors[graylight], 50%), darken(@theme-colors[graydark], 20%));
+    .colors(lighten(@colors[graylight], 50%), darken(@colors[graydark], 20%));
     border-radius: @settings[border-radius];
   }
 
@@ -49,17 +49,17 @@
     .set-sizes();
     max-width: 400px;
     appearance: none;
-    box-shadow: 1px 1px 1px @theme-colors[graylight];
-    background: linear-gradient(45deg, @theme-colors[graylight] 50%, @theme-colors[graydark] 50%),
-      linear-gradient(135deg, @theme-colors[graydark] 50%, @theme-colors[graylight] 50%),
-      white linear-gradient(to right, @theme-colors[graylight], @theme-colors[graylight]);
+    box-shadow: 1px 1px 1px @colors[graylight];
+    background: linear-gradient(45deg, @colors[graylight] 50%, @colors[graydark] 50%),
+      linear-gradient(135deg, @colors[graydark] 50%, @colors[graylight] 50%),
+      white linear-gradient(to right, @colors[graylight], @colors[graylight]);
     background-position: calc(100% - 21px) calc(1em + 2px),
       calc(100% - 16px) calc(1em + 2px),
       100% 0;
     background-size: 5px 5px, 5px 5px, 2.5rem 2.5rem;
     background-repeat: no-repeat;
     #display.dimensions(@width, 44px);
-    #border.solid(1px, @theme-colors[graylight]);
+    #border.solid(1px, @colors[graylight]);
     #font.family();
   }
 
@@ -76,14 +76,14 @@
   .textarea() {
     .set-sizes();
     #display.dimensions(100%, auto);
-    #border.solid(1px, @theme-colors[primary]);
+    #border.solid(1px, @colors[primary]);
     #font.family();
     border-radius: @settings[border-radius];
     min-height: 150px;
     overflow: auto;
 
     &:focus {
-      border-color: @theme-colors[primary];
+      border-color: @colors[primary];
     }
   }
 
