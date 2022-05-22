@@ -9,39 +9,39 @@
     transition: all .2s;
 
     &:hover {
-      background-color: darken(@bg, 20%);
+      background-color: darken(@bg, 5%);
     }
 
     &:active {
-      background-color: darken(@bg, 40%);
+      background-color: darken(@bg, 10%);
       font-size: calc(~'@{fs} - 1px');
     }
   }
 
-  .flat(@bg: @colors[primary], @col: white) when (default()) {
+  .flat(@bg: @color[primary], @col: white) when (default()) {
     #button.defaults();
     #display.colors(@col, @bg);
   }
 
-  .flat(@type, @bg: @colors[primary], @col: white, @radius: 4px) when (@type =rounded) {
+  .flat(@type, @bg: @color[primary], @col: white, @radius: @settings[radius]) when (@type =rounded) {
     #button.defaults();
     #display.colors(@col, @bg);
     border-radius: @radius;
   }
 
-  .flat(@type, @bg: @colors[primary], @col: white) when (@type =round) {
+  .flat(@type, @bg: @color[primary], @col: white) when (@type =round) {
     #button.defaults();
     #display.colors(@col, @bg);
     border-radius: 20px;
   }
 
-  .custom(@bg: @colors[primary], @col: white, @pad: 1rem, @fs: 1rem, @radius: 0) when (default()) {
+  .custom(@bg: @color[primary], @col: white, @pad: 1rem, @fs: 1rem, @radius: 0) when (default()) {
     #button.defaults(@pad, @fs);
     #display.colors(@col, @bg);
     border-radius: @radius;
   }
 
-  .link(@bg-col: @colors[primary], @col: white, @pad: .7rem 1rem, @fs: 1rem, @radius: 0) {
+  .link(@bg-col: @color[primary], @col: white, @pad: .7rem 1rem, @fs: 1rem, @radius: 0) {
     text-decoration: none;
     font-size: @fs;
     display: inline-block;
