@@ -48,11 +48,12 @@
     padding: @pad;
     text-align: center;
     border-radius: @radius;
+    transition: all .3s;
     #display.colors(@col, @bg-col);
 
     &:hover,
     &.active {
-      background-color: darken(@bg-col, 20%);
+      background-color: darken(@bg-col, 5%);
     }
   }
 }
