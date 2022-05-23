@@ -8,29 +8,29 @@
     border: @size solid @col;
   }
 
-  .solid(@type, @size: 1px, @col: black) when (@type = horizontal) {
+  .solid(@type, @size: 1px, @col: black) when (@type =horizontal) {
     border-top: @size solid @col;
     border-bottom: @size solid @col;
   }
 
-  .solid(@type, @size: 1px, @col: black) when (@type = vertical) {
+  .solid(@type, @size: 1px, @col: black) when (@type =vertical) {
     border-left: @size solid @col;
     border-right: @size solid @col;
   }
 
-  .solid(@type, @size: 1px, @col: black) when (@type = top) {
+  .solid(@type, @size: 1px, @col: black) when (@type =top) {
     border-top: @size solid @col;
   }
 
-  .solid(@type, @size: 1px, @col: black) when (@type = bottom) {
+  .solid(@type, @size: 1px, @col: black) when (@type =bottom) {
     border-bottom: @size solid @col;
   }
 
-  .solid(@type, @size: 1px, @col: black) when (@type = left) {
+  .solid(@type, @size: 1px, @col: black) when (@type =left) {
     border-left: @size solid @col;
   }
 
-  .solid(@type, @size: 1px, @col: black) when (@type = right) {
+  .solid(@type, @size: 1px, @col: black) when (@type =right) {
     border-right: @size solid @col;
   }
 
@@ -38,37 +38,37 @@
   /**
    * Dotted Borders
    */
-  
+
   .dotted(@size: 1px, @col: black) when (default()) {
     border: @size dotted @col;
   }
-  
-  .dotted(@type, @size: 1px, @col: black) when (@type = horizontal) {
+
+  .dotted(@type, @size: 1px, @col: black) when (@type =horizontal) {
     border-top: @size dotted @col;
     border-bottom: @size dotted @col;
   }
-  
-  .dotted(@type, @size: 1px, @col: black) when (@type = vertical) {
+
+  .dotted(@type, @size: 1px, @col: black) when (@type =vertical) {
     border-left: @size dotted @col;
     border-right: @size dotted @col;
   }
-  
-  .dotted(@type, @size: 1px, @col: black) when (@type = top) {
+
+  .dotted(@type, @size: 1px, @col: black) when (@type =top) {
     border-top: @size solid @col;
   }
-  
-  .dotted(@type, @size: 1px, @col: black) when (@type = bottom) {
+
+  .dotted(@type, @size: 1px, @col: black) when (@type =bottom) {
     border-bottom: @size dotted @col;
   }
-  
-  .dotted(@type, @size: 1px, @col: black) when (@type = left) {
+
+  .dotted(@type, @size: 1px, @col: black) when (@type =left) {
     border-left: @size dotted @col;
   }
-  
-  .dotted(@type, @size: 1px, @col: black) when (@type = right) {
+
+  .dotted(@type, @size: 1px, @col: black) when (@type =right) {
     border-right: @size dotted @col;
   }
-  
+
 
   /**
    * Dashed Borders
@@ -77,57 +77,57 @@
   .dashed(@size: 1px, @col: black) when (default()) {
     border: @size dashed @col;
   }
-  
-  .dashed(@type, @size: 1px, @col: black) when (@type = horizontal) {
+
+  .dashed(@type, @size: 1px, @col: black) when (@type =horizontal) {
     border-top: @size dashed @col;
     border-bottom: @size dashed @col;
   }
-  
-  .dashed(@type, @size: 1px, @col: black) when (@type = vertical) {
+
+  .dashed(@type, @size: 1px, @col: black) when (@type =vertical) {
     border-left: @size dashed @col;
     border-right: @size dashed @col;
   }
-  
-  .dashed(@type, @size: 1px, @col: black) when (@type = top) {
+
+  .dashed(@type, @size: 1px, @col: black) when (@type =top) {
     border-top: @size dashed @col;
   }
-  
-  .dashed(@type, @size: 1px, @col: black) when (@type = bottom) {
+
+  .dashed(@type, @size: 1px, @col: black) when (@type =bottom) {
     border-bottom: @size dashed @col;
   }
-  
-  .dashed(@type, @size: 1px, @col: black) when (@type = left) {
+
+  .dashed(@type, @size: 1px, @col: black) when (@type =left) {
     border-left: @size dashed @col;
   }
-  
-  .dashed(@type, @size: 1px, @col: black) when (@type = right) {
+
+  .dashed(@type, @size: 1px, @col: black) when (@type =right) {
     border-right: @size dashed @col;
   }
 
   /**
    * Border Radius Control
    */
-  
-  .radius(@size: 4px) {
+
+  .radius(@size: @settings[radius]) {
     border-radius: @size;
   }
 
-  .radius(@type, @size: 4px) when (@type = top) {
+  .radius(@type, @size: @settings[radius]) when (@type =top) {
     border-top-left-radius: @size;
     border-top-right-radius: @size;
   }
 
-  .radius(@type, @size: 4px) when (@type = bottom) {
+  .radius(@type, @size: @settings[radius]) when (@type =bottom) {
     border-bottom-left-radius: @size;
     border-bottom-right-radius: @size;
   }
 
-  .radius(@type, @size: 4px) when (@type = left) {
+  .radius(@type, @size: @settings[radius]) when (@type =left) {
     border-top-left-radius: @size;
     border-bottom-left-radius: @size;
   }
 
-  .radius(@type, @size: 4px) when (@type = right) {
+  .radius(@type, @size: @settings[radius]) when (@type =right) {
     border-top-right-radius: @size;
     border-bottom-right-radius: @size;
   }
