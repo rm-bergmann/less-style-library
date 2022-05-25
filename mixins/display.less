@@ -127,18 +127,28 @@
   }
 
   /*
-   * For quick display on :before & :after Pseudo elements.
+   * For quick display on ::before & ::after Pseudo elements.
    */
 
-  .pseudo(@val: '') {
-    content: @val;
-    display: block;
+  .pseudo(@content: '', @type: block) {
+    content: @content;
+    display: @type;
   }
 
   /*
-   * Hide on mobile, Display on Desktop
-   * @max-mobile needs to be defined in the theme that uses this style
-   * @todo: Import media query variables (only after they are standardised and made global)
+   * Hide by default, display on Laptop
+   */
+
+  .laptop() {
+    display: none;
+
+    @media @laptop-small-min {
+      display: block;
+    }
+  }
+
+  /*
+   * Hide by default, display on Desktop
    */
 
   .desktop() {
@@ -156,21 +166,19 @@
   .tablet() {
     display: none;
 
-    @media @tablet-large-min {
+    @media @tablet-small-min {
       display: block;
     }
   }
 
   /*
    * Hide on desktop, Display on Mobile
-   * @max-mobile needs to be defined in the theme that uses this style
-   * @todo: Import media query variables (only after they are standardised and made global)
    */
 
   .mobile() {
     display: none;
 
-    @media @mobile-small-max {
+    @media @mobile-large-max {
       display: block;
     }
   }
