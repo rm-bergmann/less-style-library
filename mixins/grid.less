@@ -6,7 +6,8 @@
   }
 
   .column(@type) when (@type =across) {
-    grid-column: 1 / -1;
+    grid-column-start: 1;
+    grid-column-end: -1;
   }
 
   .column(@type, @start: 1, @amount: 12) when (@type =span) {
@@ -24,9 +25,5 @@
   .row(@start: 1, @end: 2) {
     grid-row-start: @start;
     grid-row-end: @end;
-  }
-
-  .gap(@value) {
-    gap: @value;
   }
 }
