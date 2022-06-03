@@ -1,21 +1,21 @@
 #grid {
 
-  .column(@start: 1, @end: 13) when (default()) {
+  .column(@start: 1, @end: 3) when (default()) {
     grid-column-start: @start;
     grid-column-end: @end;
   }
 
-  .column(@type) when (@type =across) {
+  .column(@type) when (@type =horizontal) {
     grid-column-start: 1;
     grid-column-end: -1;
   }
 
-  .column(@type, @start: 1, @amount: 12) when (@type =span) {
+  .column(@type, @start: 1, @amount: 2) when (@type =span) {
     grid-column: @start / span @amount;
   }
 
   .column(@type, @start: 1, @span: 2) when (@type =responsive) {
-    #grid.column(across);
+    #grid.column(horizontal);
 
     @media @tablet-large-min {
       grid-column: @start / span @span;
@@ -25,5 +25,14 @@
   .row(@start: 1, @end: 2) {
     grid-row-start: @start;
     grid-row-end: @end;
+  }
+
+  .row(@type, @start: 1, @amount: 2) when (@type =span) {
+    grid-row: @start / span @amount;
+  }
+
+  .row(@type) when (@type =vertical) {
+    grid-row-start: 1;
+    grid-row-end: -1;
   }
 }
