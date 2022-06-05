@@ -1,21 +1,21 @@
 /*
- * This file contains mixins / functions to which include very common style sets used for display.
+ * This file contains mixins which include common style sets used for display.
  * Usually benefecial if there are 2 or more rules declared.
  */
 
 #display {
   /*
-  * Use this for Gridwork:
+  * Use this for CSS Grid Parent Elements:
   */
 
-  .grid(@cols: 12, @gap: 20px, @rows: 1, @row-height: auto) when (default()) {
+  .grid(@cols: 2, @rows: auto, @gap: 0) when (default()) {
     display: grid;
     grid-template-columns: repeat(@cols, 1fr);
-    grid-template-rows: repeat(@rows, @row-height);
+    grid-template-rows: @rows;
     gap: @gap;
   }
 
-  .grid(@type, @cols: 12, @gap: 20px, @rows: auto) when (@type =center) {
+  .grid(@type, @cols: 2, @rows: auto, @gap: 0) when (@type =center) {
     display: grid;
     grid-template-columns: repeat(@cols, 1fr);
     grid-template-rows: @rows;
@@ -77,51 +77,65 @@
    * Set Width & Height
    */
 
-  .dimensions(@w: 100px, @h: 100px) when (default()) {
-    width: @w;
-    height: @h;
+  .dimensions(@width: 100px, @height: 100px) when (default()) {
+    width: @width;
+    height: @height;
   }
 
   /*
    * Width & Height always equal
    */
 
-  .dimensions(@type, @val: 100px) when (@type =equal) {
-    width: @val;
-    height: @val;
+  .dimensions(@type, @value: 100px) when (@type =equal) {
+    #display.dimensions(@value, @value);
   }
 
   /*
    * Set min-width & max-width
    */
-  .width(@min: 100px, @max: 100%) {
+  .width(@min: @auto, @max: 100%) {
     min-width: @min;
     max-width: @max;
   }
 
   /*
-   * Zero spacing inside and outside element
+   * Margin and padding in 1 line of code
    */
 
-  .no-space() {
-    margin: 0;
-    padding: 0;
+  .space(@margin: 0, @padding: 0) when (default()) {
+    margin: @margin;
+    padding: @padding;
   }
 
   /*
-   * Clearfix. Use this when elements are floated to fix the height of the parent element
-   * Also good for mis-aligned elements caused by floats.
+   * Always zero spacing inside and outside element
+   */
+
+  .space(@type) when (@type =0) {
+    #display.space(0, 0);
+  }
+
+  /*
+   * Equal space inside and outside of element
+   */
+
+  .space(@type, @value: 0) when (@type =equal) {
+    #display.space(@value, @value);
+  }
+
+  /*
+   * Retains height of parent element when children elements are 
+   * floated left or right.
    */
 
   .clearfix() {
 
-    &:before,
-    &:after {
-      content: '';
-      display: table;
+    &::before,
+    &::after {
+      #display.pseudo('', table);
     }
 
-    &:after {
+    &::after {
       clear: both;
     }
   }
