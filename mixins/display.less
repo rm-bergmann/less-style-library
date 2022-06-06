@@ -68,16 +68,16 @@
    * Set color and background color
    */
 
-  .colors(@col: black, @bg: white) {
-    color: @col;
-    background-color: @bg;
+  .colors(@color: black, @background: white) {
+    color: @color;
+    background-color: @background;
   }
 
   /*
    * Set Width & Height
    */
 
-  .dimensions(@width: 100px, @height: 100px) when (default()) {
+  .dimensions(@width: 100px, @height: auto) when (default()) {
     width: @width;
     height: @height;
   }
@@ -91,9 +91,18 @@
   }
 
   /*
+   * Set width, min-width & max-width
+   */
+  .width(@width: auto, @min: auto, @max: 100%) when (default()) {
+    width: @width;
+    min-width: @min;
+    max-width: @max;
+  }
+
+  /*
    * Set min-width & max-width
    */
-  .width(@min: @auto, @max: 100%) {
+  .width(@type, @min: auto, @max: 100%) when (@type =minmax) {
     min-width: @min;
     max-width: @max;
   }
