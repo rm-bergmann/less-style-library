@@ -23,13 +23,13 @@
     #display.colors(@col, @bg);
   }
 
-  .flat(@type, @bg: @color[primary], @col: white, @radius: @settings[radius]) when (@type =rounded) {
+  .flat(@type, @bg: @color[primary], @col: white, @radius: @settings[radius]) when (@type = rounded) {
     #button.defaults();
     #display.colors(@col, @bg);
     border-radius: @radius;
   }
 
-  .flat(@type, @bg: @color[primary], @col: white) when (@type =round) {
+  .flat(@type, @bg: @color[primary], @col: white) when (@type = round) {
     #button.defaults();
     #display.colors(@col, @bg);
     border-radius: 20px;

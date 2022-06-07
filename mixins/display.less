@@ -15,7 +15,7 @@
     gap: @gap;
   }
 
-  .grid(@type, @cols: 2, @rows: auto, @gap: 0) when (@type =center) {
+  .grid(@type, @cols: 2, @rows: auto, @gap: 0) when (@type = center) {
     display: grid;
     grid-template-columns: repeat(@cols, 1fr);
     grid-template-rows: @rows;
@@ -28,7 +28,7 @@
    * Center all parent's children
    */
 
-  .flex(@justify) when (@justify =space) {
+  .flex(@justify) when (@justify = space) {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -38,7 +38,7 @@
    * Align children to left of container
    */
 
-  .flex(@align) when (@align =start) {
+  .flex(@align) when (@align = start) {
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
@@ -48,7 +48,7 @@
    * Align children to right of container
    */
 
-  .flex(@align) when (@align =end) {
+  .flex(@align) when (@align = end) {
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-end;
@@ -58,7 +58,7 @@
    * Flexbox Grid alignment
    */
 
-  .flex(@align) when (@align =grid) {
+  .flex(@align) when (@align = grid) {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -86,7 +86,7 @@
    * Width & Height always equal
    */
 
-  .dimensions(@type, @value: 100px) when (@type =equal) {
+  .dimensions(@type, @value: 100px) when (@type = equal) {
     #display.dimensions(@value, @value);
   }
 
@@ -102,7 +102,7 @@
   /*
    * Set min-width & max-width
    */
-  .width(@type, @min: auto, @max: 100%) when (@type =minmax) {
+  .width(@type, @min: auto, @max: 100%) when (@type = minmax) {
     min-width: @min;
     max-width: @max;
   }
@@ -120,7 +120,7 @@
    * Always zero spacing inside and outside element
    */
 
-  .space(@type) when (@type =0) {
+  .space(@type) when (@type = 0) {
     #display.space(0, 0);
   }
 
@@ -128,7 +128,7 @@
    * Equal space inside and outside of element
    */
 
-  .space(@type, @value: 0) when (@type =equal) {
+  .space(@type, @value: 0) when (@type = equal) {
     #display.space(@value, @value);
   }
 

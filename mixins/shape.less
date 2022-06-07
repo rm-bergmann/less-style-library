@@ -1,27 +1,27 @@
 #shape {
 
-  .arrow(@direction, @size: 1rem, @color: @color[primary]) when (@direction =up) {
+  .arrow(@direction, @size: 1rem, @color: @color[primary]) when (@direction = up) {
     border-left: @size solid transparent;
     border-right: @size solid transparent;
     border-bottom: @size solid @color;
     #display.dimensions(equal, 0);
   }
 
-  .arrow(@direction, @size: 1rem, @color: @color[primary]) when (@direction =down) {
+  .arrow(@direction, @size: 1rem, @color: @color[primary]) when (@direction = down) {
     border-left: @size solid transparent;
     border-right: @size solid transparent;
     border-top: @size solid @color;
     #display.dimensions(equal, 0);
   }
 
-  .arrow(@direction, @size: 1rem, @color: @color[primary]) when (@direction =left) {
+  .arrow(@direction, @size: 1rem, @color: @color[primary]) when (@direction = left) {
     border-top: @size solid transparent;
     border-bottom: @size solid transparent;
     border-right: @size solid @color;
     #display.dimensions(equal, 0);
   }
 
-  .arrow(@direction, @size: 1rem, @color: @color[primary]) when (@direction =right) {
+  .arrow(@direction, @size: 1rem, @color: @color[primary]) when (@direction = right) {
     border-top: @size solid transparent;
     border-bottom: @size solid transparent;
     border-left: @size solid @color;
@@ -51,7 +51,7 @@
     #display.dimensions(equal, @size);
   }
 
-  .square(@type, @size: 100px, @background: @color[primary], @radius: @settings[radius]) when (@type =rounded) {
+  .square(@type, @size: 100px, @background: @color[primary], @radius: @settings[radius]) when (@type = rounded) {
     #shape.square(@size, @background);
     border-radius: @radius;
   }
@@ -62,7 +62,7 @@
     #display.dimensions(@width, @width / 3);
   }
 
-  .rectangle(@type, @width: 100px, @background: @color[primary], @radius: @settings[radius]) when (@type =rounded) {
+  .rectangle(@type, @width: 100px, @background: @color[primary], @radius: @settings[radius]) when (@type = rounded) {
     border-radius: @radius;
     #shape.rectangle(@width, @background);
   }

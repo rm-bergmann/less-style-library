@@ -26,18 +26,18 @@
     }
   }
 
-  .input(@type) when (@type =rounded) {
+  .input(@type) when (@type = rounded) {
     .input();
     .colors();
     border-radius: @settings[radius];
   }
 
-  .input(@type) when (@type =dark) {
+  .input(@type) when (@type = dark) {
     .input();
     .colors(@color[graylight], @color[graydark]);
   }
 
-  .input(@type) when (@type =dark-rounded) {
+  .input(@type) when (@type = dark-rounded) {
     .input();
     .colors(@color[graylight], @color[graydark]);
     border-radius: @settings[radius];
@@ -67,7 +67,7 @@
     .select-default();
   }
 
-  .select(@type) when (@type =rounded) {
+  .select(@type) when (@type = rounded) {
     .select-default();
     border-radius: @settings[radius];
   }

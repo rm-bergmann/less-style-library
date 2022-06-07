@@ -4,15 +4,15 @@
     background-image: linear-gradient(to bottom, @top, @bottom);
   }
 
-  .linear(@type, @top: @color[primary], @bottom: @color[secondary]) when (@type =top) {
+  .linear(@type, @top: @color[primary], @bottom: @color[secondary]) when (@type = top) {
     background-image: linear-gradient(to top, @top, @bottom);
   }
 
-  .linear(@type, @left: @color[primary], @right: @color[secondary]) when (@type =left) {
+  .linear(@type, @left: @color[primary], @right: @color[secondary]) when (@type = left) {
     background-image: linear-gradient(to left, @left, @right);
   }
 
-  .linear(@type, @left: @color[primary], @right: @color[secondary]) when (@type =right) {
+  .linear(@type, @left: @color[primary], @right: @color[secondary]) when (@type = right) {
     background-image: linear-gradient(to right, @left, @right);
   }
 
